@@ -3,189 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Инструкция для сотрудника технической поддержки</title>
+    <title>Пошаговая инструкция для нового сотрудника технической поддержки</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
             line-height: 1.6;
+            color: #333;
         }
-        .header-bg {
-            background: linear-gradient(135deg, #3498db, #2c3e50);
+        
+        h1 {
+            font-size: 2rem;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 0.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2563eb;
         }
-        .section-card {
-            border-left: 4px solid #3498db;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+        
+        h2 {
+            font-size: 1.75rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2563eb;
         }
-        .section-card:hover {
-            transform: translateY(-5px);
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2563eb;
         }
-        details summary {
-            cursor: pointer;
+        
+        h4 {
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2563eb;
+        }
+        
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        
+        .step {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 4px solid #3b82f6;
+            background-color: #f8fafc;
+        }
+        
+        .info-block {
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .info {
+            background-color: #d1ecf1;
+            border-left: 4px solid #0dcaf0;
+        }
+        
+        .success {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        
+        .toc {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .toc-title {
             font-weight: bold;
-            color: #2c3e50;
+            font-size: 1.25rem;
+            color: #2563eb;
+            margin-bottom: 10px;
         }
-        details summary::-webkit-details-marker {
-            display: none;
+        
+        .toc a {
+            color: #3b82f6;
+            text-decoration: none;
         }
-        .tip-box {
-            border-left: 4px solid #f39c12;
-            background-color: #fffaf0;
+        
+        .toc a:hover {
+            text-decoration: underline;
         }
-        .important-box {
-            border-left: 4px solid #e74c3c;
-            background-color: #fff5f5;
-        }
-        .success-box {
-            border-left: 4px solid #2ecc71;
-            background-color: #f0fff4;
-        }
-        .separator {
-            height: 2px;
-            background: linear-gradient(to right, transparent, #3498db, transparent);
-        }
-        .step-number {
-            background-color: #3498db;
+        
+        .btn {
+            background-color: #3b82f6;
             color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
         }
-        .checklist-item:before {
-            content: "✓";
-            color: #2ecc71;
-            margin-right: 10px;
-            font-weight: bold;
+        
+        .btn:hover {
+            background-color: #2563eb;
         }
+        
+        code {
+            background-color: #f1f5f9;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
         table {
-            border-collapse: collapse;
             width: 100%;
+            border-collapse: collapse;
         }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
+        
+        table td, table th {
+            border: 1px solid #e2e8f0;
+            padding: 10px;
         }
-        th {
-            background-color: #f2f2f2;
+        
+        table th {
+            background-color: #f8fafc;
         }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
+        
+        img {
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            max-width: 100%;
+        }
+        
+        @media print {
+            .no-print {
+                display: none;
+            }
+            
+            section {
+                break-inside: avoid;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <!-- Заголовок -->
-    <header class="header-bg text-white py-12 px-4 md:px-0">
-        <div class="container mx-auto">
-            <h1 class="text-4xl font-bold mb-4 text-center">Руководство по технической поддержке клиентов</h1>
-            <p class="text-xl text-center">Все, что нужно знать для эффективного взаимодействия с клиентами</p>
-        </div>
-    </header>
-
-    <!-- Основной контент -->
-    <main class="container mx-auto py-8 px-4 md:px-0">
+<body class="bg-gray-50">
+    <div class="container mx-auto max-w-6xl px-4 py-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold mb-2">Пошаговая инструкция для нового сотрудника технической поддержки</h1>
+            <p class="text-xl text-gray-600">Руководство по эффективной работе с клиентами и системами</p>
+        </header>
         
-        <!-- Введение -->
-        <section class="bg-white rounded-lg p-6 mb-8 shadow-md">
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">Введение</h2>
-            <p class="mb-4">
+        <div class="toc">
+            <div class="toc-title">Содержание:</div>
+            <ol class="ml-5">
+                <li><a href="#section1">Введение</a></li>
+                <li><a href="#section2">Основы эффективного общения с клиентами</a>
+                    <ul class="ml-5">
+                        <li><a href="#section2-1">Ключевые принципы общения</a></li>
+                        <li><a href="#section2-2">Структура эффективного общения</a></li>
+                        <li><a href="#section2-3">Примеры правильных и неправильных формулировок</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section3">Работа с удаленным подключением</a>
+                    <ul class="ml-5">
+                        <li><a href="#section3-1">Подключение через AnyDesk</a></li>
+                        <li><a href="#section3-2">Подключение через TeamViewer</a></li>
+                        <li><a href="#section3-3">Меры безопасности</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section4">Работа с системами и мессенджерами</a>
+                    <ul class="ml-5">
+                        <li><a href="#section4-1">OkDesk</a></li>
+                        <li><a href="#section4-2">WhatsApp Business</a></li>
+                        <li><a href="#section4-3">Telegram</a></li>
+                        <li><a href="#section4-4">Bitrix24</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section5">Обучение клиентов системам мониторинга</a>
+                    <ul class="ml-5">
+                        <li><a href="#section5-1">Система Wialon</a></li>
+                        <li><a href="#section5-2">Система ГлонассСофт</a></li>
+                        <li><a href="#section5-3">Методика обучения</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section6">Ведение переписки по шаблонам</a>
+                    <ul class="ml-5">
+                        <li><a href="#section6-1">Шаблоны для чатов</a></li>
+                        <li><a href="#section6-2">Шаблоны для Email</a></li>
+                        <li><a href="#section6-3">Шаблоны для CRM</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section7">Ответы на типовые вопросы и диагностика</a>
+                    <ul class="ml-5">
+                        <li><a href="#section7-1">Подход к диагностике</a></li>
+                        <li><a href="#section7-2">Каталог типовых вопросов и решений</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section8">Поднятие уровня доверия клиента</a>
+                    <ul class="ml-5">
+                        <li><a href="#section8-1">Стратегии укрепления доверия</a></li>
+                        <li><a href="#section8-2">Решение конфликтных ситуаций</a></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <section id="section1">
+            <h2>1. Введение</h2>
+            <p class="my-4">
                 Добро пожаловать в команду технической поддержки! Данное руководство поможет вам освоить все необходимые навыки для эффективной работы с клиентами, включая консультирование, объяснение технических деталей, решение проблем и обучение клиентов использованию наших систем.
             </p>
-            <div class="tip-box p-4 rounded mb-4">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-lightbulb mr-2"></i>Важно помнить!</h3>
-                <p>Ваше взаимодействие с клиентом формирует его мнение о компании в целом. Положительный опыт общения с технической поддержкой значительно повышает лояльность клиентов и их доверие к компании.</p>
-            </div>
-            <div class="separator my-6"></div>
-            <h3 class="text-xl font-bold mb-4">Содержание руководства:</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="section-card p-4 rounded bg-white">
-                    <h4 class="font-bold mb-2"><i class="fas fa-comments mr-2 text-blue-500"></i>Основы эффективного общения</h4>
-                    <p>Принципы корректного, вежливого и уверенного взаимодействия с клиентом</p>
-                </div>
-                <div class="section-card p-4 rounded bg-white">
-                    <h4 class="font-bold mb-2"><i class="fas fa-desktop mr-2 text-blue-500"></i>Удаленное подключение</h4>
-                    <p>Инструкции по работе с AnyDesk и TeamViewer для оказания помощи клиентам</p>
-                </div>
-                <div class="section-card p-4 rounded bg-white">
-                    <h4 class="font-bold mb-2"><i class="fas fa-map-marked-alt mr-2 text-blue-500"></i>Системы мониторинга</h4>
-                    <p>Обучение клиентов работе с системами Wialon и ГлонассСофт</p>
-                </div>
-                <div class="section-card p-4 rounded bg-white">
-                    <h4 class="font-bold mb-2"><i class="fas fa-envelope mr-2 text-blue-500"></i>Ведение переписки</h4>
-                    <p>Шаблоны и правила ведения переписки в чатах, почте и CRM-системе</p>
-                </div>
-                <div class="section-card p-4 rounded bg-white">
-                    <h4 class="font-bold mb-2"><i class="fas fa-question-circle mr-2 text-blue-500"></i>Типовые вопросы</h4>
-                    <p>Быстрая диагностика и ответы на часто задаваемые вопросы</p>
-                </div>
-                <div class="section-card p-4 rounded bg-white">
-                    <h4 class="font-bold mb-2"><i class="fas fa-handshake mr-2 text-blue-500"></i>Повышение доверия</h4>
-                    <p>Стратегии укрепления доверия клиента к компании</p>
-                </div>
+            <div class="info-block info">
+                <p><strong>Важно помнить!</strong> Ваше взаимодействие с клиентом формирует его мнение о компании в целом. Положительный опыт общения с технической поддержкой значительно повышает лояльность клиентов и их доверие к компании.</p>
             </div>
         </section>
-
-        <!-- Раздел 1: Основы эффективного общения -->
-        <section id="communication" class="bg-white rounded-lg p-6 mb-8 shadow-md">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">1. Основы эффективного общения с клиентами</h2>
+        
+        <section id="section2">
+            <h2>2. Основы эффективного общения с клиентами</h2>
             
-            <div class="flex mb-6">
-                <div class="w-1/2 pr-4">
-                    <h3 class="text-xl font-bold mb-4">Ключевые принципы общения</h3>
-                    <p class="mb-4">
-                        Эффективное общение с клиентами строится на трех ключевых принципах: <strong>корректность</strong>, <strong>вежливость</strong> и <strong>уверенность</strong>.
-                    </p>
-                    <ul class="mb-4 pl-5">
-                        <li class="checklist-item">Используйте профессиональный, но дружелюбный тон</li>
-                        <li class="checklist-item">Обращайтесь к клиенту по имени, указанному в системе</li>
-                        <li class="checklist-item">Избегайте технического жаргона без пояснений</li>
-                        <li class="checklist-item">Проявляйте эмпатию к проблемам клиента</li>
-                        <li class="checklist-item">Сохраняйте спокойствие даже в сложных ситуациях</li>
-                    </ul>
-                </div>
-                <div class="w-1/2">
-                    <img src="https://www.unicraft.org/wp-content/uploads/2023/12/women-working-in-call-center.jpg" alt="Общение с клиентами" class="rounded-lg shadow-md w-full h-auto">
-                </div>
+            <div id="section2-1">
+                <h3>2.1 Ключевые принципы общения</h3>
+                <p>Эффективное общение с клиентами строится на трех ключевых принципах: <strong>корректность</strong>, <strong>вежливость</strong> и <strong>уверенность</strong>.</p>
+                
+                <ul class="list-disc ml-6 my-4">
+                    <li>Используйте профессиональный, но дружелюбный тон</li>
+                    <li>Обращайтесь к клиенту по имени, указанному в системе</li>
+                    <li>Избегайте технического жаргона без пояснений</li>
+                    <li>Проявляйте эмпатию к проблемам клиента</li>
+                    <li>Сохраняйте спокойствие даже в сложных ситуациях</li>
+                </ul>
+                
+                <img src="https://www.unicraft.org/wp-content/uploads/2023/12/women-working-in-call-center.jpg" alt="Общение с клиентами" class="my-4 max-w-full">
             </div>
-
-            <div class="separator my-6"></div>
-
-            <h3 class="text-xl font-bold mb-4">Структура эффективного общения</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div class="bg-blue-50 p-4 rounded shadow">
-                    <h4 class="font-bold mb-2 text-blue-700">Начало разговора</h4>
+            
+            <div id="section2-2">
+                <h3>2.2 Структура эффективного общения</h3>
+                
+                <h4>Начало разговора</h4>
+                <div class="step">
                     <p>Приветствие, идентификация себя и компании, выяснение потребности клиента</p>
+                    <p class="text-gray-700 italic">"Добрый день, [Имя клиента]! Меня зовут [Ваше имя], компания [Название компании]. Чем я могу вам помочь сегодня?"</p>
                 </div>
-                <div class="bg-blue-50 p-4 rounded shadow">
-                    <h4 class="font-bold mb-2 text-blue-700">Основная часть</h4>
+                
+                <h4>Основная часть</h4>
+                <div class="step">
                     <p>Выяснение деталей, предложение решения, проверка понимания клиентом</p>
+                    <p class="text-gray-700 italic">"Я понял вашу проблему. Давайте я уточню несколько деталей, чтобы предложить наиболее эффективное решение..."</p>
                 </div>
-                <div class="bg-blue-50 p-4 rounded shadow">
-                    <h4 class="font-bold mb-2 text-blue-700">Завершение</h4>
+                
+                <h4>Завершение</h4>
+                <div class="step">
                     <p>Подведение итогов, уточнение наличия других вопросов, вежливое прощание</p>
+                    <p class="text-gray-700 italic">"Итак, мы решили вопрос с настройкой системы мониторинга. Остались ли у вас еще какие-то вопросы? Благодарю за обращение в нашу службу поддержки!"</p>
+                </div>
+                
+                <div class="info-block warning">
+                    <p><strong>Важно!</strong> Давайте клиенту четкие и понятные пояснения. Избегайте размытых формулировок, излишне технических терминов без объяснения и неуверенных ответов.</p>
                 </div>
             </div>
-
-            <div class="important-box p-4 rounded mb-6">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Важно!</h3>
-                <p>Давайте клиенту четкие и понятные пояснения. Избегайте размытых формулировок, излишне технических терминов без объяснения и неуверенных ответов.</p>
-            </div>
-
-            <h3 class="text-xl font-bold mb-4">Примеры правильных и неправильных формулировок</h3>
-            <div class="overflow-x-auto">
-                <table class="min-w-full mb-6">
+            
+            <div id="section2-3">
+                <h3>2.3 Примеры правильных и неправильных формулировок</h3>
+                
+                <table class="my-4">
                     <thead>
                         <tr>
-                            <th class="w-1/2">Неправильно ❌</th>
-                            <th class="w-1/2">Правильно ✅</th>
+                            <th>Неправильно ❌</th>
+                            <th>Правильно ✅</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -207,920 +302,915 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-
-            <div class="success-box p-4 rounded">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-check-circle mr-2"></i>Совет</h3>
-                <p>Делайте паузы в разговоре, чтобы клиент мог обдумать информацию и задать уточняющие вопросы. Убедитесь, что клиент понял предоставленную информацию, прежде чем переходить к следующему шагу.</p>
-            </div>
-        </section>
-
-        <!-- Раздел 2: Удаленное подключение -->
-        <section id="remote-connection" class="bg-white rounded-lg p-6 mb-8 shadow-md">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">2. Работа с удаленным подключением</h2>
-            
-            <div class="flex mb-6">
-                <div class="w-1/2 pr-4">
-                    <h3 class="text-xl font-bold mb-4">Инструменты удаленного доступа</h3>
-                    <p class="mb-4">
-                        Для решения технических проблем клиентов мы используем программы <strong>AnyDesk</strong> и <strong>TeamViewer</strong>. Эти инструменты позволяют получить доступ к компьютеру клиента с его разрешения для оказания оперативной помощи.
-                    </p>
-                    <div class="tip-box p-4 rounded mb-4">
-                        <h4 class="font-bold mb-2">Преимущества удаленного подключения:</h4>
-                        <ul class="pl-5">
-                            <li class="checklist-item">Быстрое выявление и устранение проблем</li>
-                            <li class="checklist-item">Возможность наглядно продемонстрировать работу системы</li>
-                            <li class="checklist-item">Обучение клиента в режиме реального времени</li>
-                            <li class="checklist-item">Сокращение времени решения проблемы</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-1/2">
-                    <img src="https://softlist.com.ua/attachments/e4152536-670b-44b4-9fc2-2cbcd971aac3_anydesk-teamviewer-min.webp" alt="AnyDesk и TeamViewer" class="rounded-lg shadow-md w-full h-auto">
-                </div>
-            </div>
-
-            <div class="separator my-6"></div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Подключение через AnyDesk</h3>
-                    <img src="https://anydesk.help/wp-content/uploads/2021/04/3-Podtverzhdenie.png" alt="Подключение через AnyDesk" class="rounded-lg shadow-md w-full h-auto mb-4">
-                    <ol class="mb-4">
-                        <li class="flex items-start mb-3">
-                            <div class="step-number mr-3 flex-shrink-0 mt-1">1</div>
-                            <div>
-                                <strong>Инструктаж клиента:</strong> Попросите клиента скачать и установить AnyDesk с официального сайта <a href="https://anydesk.com/ru" class="text-blue-600 underline" target="_blank">anydesk.com</a>
-                            </div>
-                        </li>
-                        <li class="flex items-start mb-3">
-                            <div class="step-number mr-3 flex-shrink-0 mt-1">2</div>
-                            <div>
-                                <strong>Получение ID:</strong> После установки клиент увидит свой AnyDesk-адрес (ID) — попросите сообщить его вам
-                            </div>
-                        </li>
-                        <li class="flex items-start mb-3">
-                            <div class="step-number mr-3 flex-shrink-0 mt-1">3</div>
-                            <div>
-                                <strong>Подключение:</strong> Введите полученный ID в своем приложении AnyDesk и нажмите "Подключиться"
-                            </div>
-                        </li>
-                        <li class="flex items-start mb-3">
-                            <div class="step-number mr-3 flex-shrink-0 mt-1">4</div>
-                            <div>
-                                <strong>Подтверждение:</strong> Клиент должен принять запрос на подключение, нажав кнопку "Разрешить" или "Принять"
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="step-number mr-3 flex-shrink-0 mt-1">5</div>
-                            <div>
-                                <strong>Управление:</strong> После подключения вы получите доступ к экрану клиента и сможете управлять его компьютером
-                            </div>
-                        </li>
-                    </ol>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Подключение через TeamViewer</h3>
-                    <img src="https://otr-soft.ru/upload/medialibrary/a7d/vhod_teamviewer.png" alt="Подключение через TeamViewer" class="rounded-lg shadow-md w-full h-auto mb-4">
-                    <ol class="mb-4">
-                        <li class="flex items-start mb-3">
-                            <div class="step-number mr-3 flex-shrink-0 mt-1">1</div>
-                            <div>
-                                <strong>Инструктаж клиента:</strong> Попросите клиента скачать и установить TeamViewer с официального сайта <a href="https://www.teamviewer.com/ru/" class="text-blue-600 underline" target="_blank">teamviewer.com</a>
-                            </div>
-                        </li>
-                        <li class="flex items-start mb-3">
-                            <div class="step-number mr-3 flex-shrink-0 mt-1">2</div>
-                            <div>
-                                <strong>Получение ID и пароля:</strong> После запуска клиент увидит свой ID и пароль — попросите сообщить их вам
-                            </div>
-                        </li>
-                        <li class="flex items-start mb-3">
-                            <div class="step-number mr-3 flex-shrink-0 mt-1">3</div>
-                            <div>
-                                <strong>Подключение:</strong> Введите полученный ID в поле "ID партнера" в своем приложении TeamViewer и нажмите "Подключиться к партнеру"
-                            </div>
-                        </li>
-                        <li class="flex items-start mb-3">
-                            <div class="step-number mr-3 flex-shrink-0 mt-1">4</div>
-                            <div>
-                                <strong>Ввод пароля:</strong> Введите пароль, предоставленный клиентом
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="step-number mr-3 flex-shrink-0 mt-1">5</div>
-                            <div>
-                                <strong>Управление:</strong> После успешного подключения вы получите доступ к экрану клиента
-                            </div>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-
-            <div class="important-box p-4 rounded mb-6">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Меры безопасности при удаленном подключении</h3>
-                <ul class="pl-5">
-                    <li class="checklist-item">Всегда уведомляйте клиента о действиях, которые вы собираетесь выполнить</li>
-                    <li class="checklist-item">Не запрашивайте конфиденциальную информацию (пароли от личных аккаунтов и т.д.)</li>
-                    <li class="checklist-item">Не проводите никаких действий без согласия клиента</li>
-                    <li class="checklist-item">По завершении работы обязательно завершите сеанс удаленного доступа</li>
-                    <li class="checklist-item">Объясняйте клиенту каждый шаг своих действий для поддержания доверия</li>
-                </ul>
-            </div>
-
-            <div class="success-box p-4 rounded">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-check-circle mr-2"></i>Рекомендации</h3>
-                <p class="mb-2">При возникновении проблем с установкой программ удаленного доступа:</p>
-                <ul class="pl-5">
-                    <li class="checklist-item">Предложите клиенту использовать портативную версию программы (без установки)</li>
-                    <li class="checklist-item">При проблемах с одной программой предложите альтернативу (AnyDesk вместо TeamViewer или наоборот)</li>
-                    <li class="checklist-item">Имейте готовые подробные инструкции с скриншотами, которые можно отправить клиенту по электронной почте</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Раздел 3: Системы мониторинга -->
-        <section id="monitoring-systems" class="bg-white rounded-lg p-6 mb-8 shadow-md">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">3. Обучение клиентов работе с системами мониторинга</h2>
-            
-            <div class="flex mb-6">
-                <div class="w-1/2 pr-4">
-                    <h3 class="text-xl font-bold mb-4">Системы Wialon и ГлонассСофт</h3>
-                    <p class="mb-4">
-                        Ваша задача — обучить клиента эффективно пользоваться системами мониторинга транспорта <strong>Wialon</strong> и <strong>ГлонассСофт</strong>. Важно адаптировать свой подход к уровню технической подготовки клиента.
-                    </p>
-                    <div class="tip-box p-4 rounded mb-4">
-                        <h4 class="font-bold mb-2">Принципы обучения клиентов:</h4>
-                        <ul class="pl-5">
-                            <li class="checklist-item">Начинайте с базовых функций, постепенно переходя к сложным</li>
-                            <li class="checklist-item">Используйте практические примеры из реальных задач клиента</li>
-                            <li class="checklist-item">Просите клиента повторять действия после вашей демонстрации</li>
-                            <li class="checklist-item">Предоставляйте дополнительные материалы для самостоятельного изучения</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-1/2">
-                    <img src="https://wialon.com/resource/new-design/wialon/main-mockup-en.png" alt="Система Wialon" class="rounded-lg shadow-md w-full h-auto">
-                </div>
-            </div>
-
-            <div class="separator my-6"></div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Wialon -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Обучение работе с Wialon</h3>
-                    <img src="https://help.wialon.com/help/wialon-hosting/files/ru/14468245/28408016/2/1675173296180/monitor_ru.png" alt="Интерфейс Wialon" class="rounded-lg shadow-md w-full h-auto mb-4">
-                    
-                    <details class="mb-4">
-                        <summary class="p-2 bg-gray-100 rounded">Базовые функции Wialon</summary>
-                        <div class="p-4 bg-gray-50 rounded-b">
-                            <ol>
-                                <li class="mb-2"><strong>Вход в систему:</strong> Объясните процесс авторизации, смены пароля, настройки профиля</li>
-                                <li class="mb-2"><strong>Интерфейс:</strong> Покажите основные элементы интерфейса, панели инструментов, меню</li>
-                                <li class="mb-2"><strong>Объекты мониторинга:</strong> Продемонстрируйте список объектов, группировку, фильтрацию</li>
-                                <li class="mb-2"><strong>Карта:</strong> Объясните инструменты навигации, масштабирование, изменение типа карты</li>
-                                <li class="mb-2"><strong>Мониторинг онлайн:</strong> Покажите текущее местоположение, статус объектов, основные параметры</li>
-                            </ol>
-                        </div>
-                    </details>
-                    
-                    <details class="mb-4">
-                        <summary class="p-2 bg-gray-100 rounded">Продвинутые функции Wialon</summary>
-                        <div class="p-4 bg-gray-50 rounded-b">
-                            <ol>
-                                <li class="mb-2"><strong>Отчеты:</strong> Обучите созданию, настройке и экспорту отчетов по различным параметрам</li>
-                                <li class="mb-2"><strong>Треки и маршруты:</strong> Покажите анализ истории перемещений, построение треков</li>
-                                <li class="mb-2"><strong>Геозоны:</strong> Объясните создание, редактирование и использование геозон</li>
-                                <li class="mb-2"><strong>Уведомления:</strong> Настройка оповещений о различных событиях и нарушениях</li>
-                                <li class="mb-2"><strong>Топливный контроль:</strong> Обучите анализу расхода топлива, выявлению сливов и заправок</li>
-                                <li class="mb-2"><strong>Мобильное приложение:</strong> Объясните установку и основные функции мобильной версии</li>
-                            </ol>
-                        </div>
-                    </details>
-                    
-                    <div class="bg-blue-50 p-4 rounded shadow mb-4">
-                        <h4 class="font-bold mb-2 text-blue-700">Сценарий обучения Wialon</h4>
-                        <ol>
-                            <li class="mb-2">Демонстрация входа и основного интерфейса (15 минут)</li>
-                            <li class="mb-2">Работа с объектами мониторинга и картой (20 минут)</li>
-                            <li class="mb-2">Обучение построению отчетов по шаблонам (30 минут)</li>
-                            <li class="mb-2">Настройка геозон и уведомлений (20 минут)</li>
-                            <li class="mb-2">Практические задания и ответы на вопросы (30 минут)</li>
-                        </ol>
-                    </div>
-                </div>
                 
-                <!-- ГлонассСофт -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Обучение работе с ГлонассСофт</h3>
-                    <img src="https://glonasss.com/wp-content/uploads/2023/03/Gurtam-Wialon-screen-1-min.jpg" alt="Интерфейс ГлонассСофт" class="rounded-lg shadow-md w-full h-auto mb-4">
-                    
-                    <details class="mb-4">
-                        <summary class="p-2 bg-gray-100 rounded">Базовые функции ГлонассСофт</summary>
-                        <div class="p-4 bg-gray-50 rounded-b">
-                            <ol>
-                                <li class="mb-2"><strong>Авторизация:</strong> Объясните процесс входа в систему, настройки учетной записи</li>
-                                <li class="mb-2"><strong>Рабочий стол:</strong> Покажите основные элементы интерфейса, виджеты, настройку рабочего стола</li>
-                                <li class="mb-2"><strong>Объекты:</strong> Продемонстрируйте список транспортных средств, группы, теги</li>
-                                <li class="mb-2"><strong>Карта и мониторинг:</strong> Объясните работу с картой, отслеживание объектов в реальном времени</li>
-                                <li class="mb-2"><strong>Информационные панели:</strong> Покажите как получить оперативную информацию о состоянии объектов</li>
-                            </ol>
-                        </div>
-                    </details>
-                    
-                    <details class="mb-4">
-                        <summary class="p-2 bg-gray-100 rounded">Продвинутые функции ГлонассСофт</summary>
-                        <div class="p-4 bg-gray-50 rounded-b">
-                            <ol>
-                                <li class="mb-2"><strong>Аналитика и отчеты:</strong> Обучите работе с системой отчетности, настройке параметров</li>
-                                <li class="mb-2"><strong>Контроль топлива:</strong> Покажите анализ расхода топлива, обнаружение заправок и сливов</li>
-                                <li class="mb-2"><strong>Контрольные точки и маршруты:</strong> Объясните создание и контроль исполнения маршрутов</li>
-                                <li class="mb-2"><strong>Журнал событий:</strong> Продемонстрируйте работу с журналом событий и фильтрацию по типам</li>
-                                <li class="mb-2"><strong>Уведомления:</strong> Настройка системы оповещений о событиях и нарушениях</li>
-                                <li class="mb-2"><strong>Экспорт данных:</strong> Объясните варианты выгрузки данных в различные форматы</li>
-                            </ol>
-                        </div>
-                    </details>
-                    
-                    <div class="bg-blue-50 p-4 rounded shadow mb-4">
-                        <h4 class="font-bold mb-2 text-blue-700">Сценарий обучения ГлонассСофт</h4>
-                        <ol>
-                            <li class="mb-2">Знакомство с интерфейсом и настройка рабочего стола (15 минут)</li>
-                            <li class="mb-2">Мониторинг объектов и работа с картой (20 минут)</li>
-                            <li class="mb-2">Создание и настройка отчетов (25 минут)</li>
-                            <li class="mb-2">Настройка уведомлений и контрольных точек (20 минут)</li>
-                            <li class="mb-2">Практические задания по конкретным задачам клиента (35 минут)</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-            <div class="separator my-6"></div>
-
-            <div class="important-box p-4 rounded mb-6">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Важные моменты при обучении</h3>
-                <ul class="pl-5">
-                    <li class="checklist-item">Уточните уровень технической подготовки клиента перед началом обучения</li>
-                    <li class="checklist-item">Адаптируйте язык объяснений под уровень клиента (избегайте сложных терминов для новичков)</li>
-                    <li class="checklist-item">Создайте "шпаргалку" с основными функциями для клиента</li>
-                    <li class="checklist-item">Обязательно проверяйте усвоение материала через практические задания</li>
-                    <li class="checklist-item">Предложите дополнительные ресурсы для самостоятельного изучения</li>
-                </ul>
-            </div>
-
-            <div class="success-box p-4 rounded">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-check-circle mr-2"></i>Методические рекомендации</h3>
-                <p class="mb-2">Эффективные подходы к обучению клиентов:</p>
-                <ul class="pl-5">
-                    <li class="checklist-item">Используйте метод "покажи — объясни — повтори" (демонстрация, объяснение, самостоятельное выполнение клиентом)</li>
-                    <li class="checklist-item">Разбивайте обучение на короткие сессии по 30-40 минут с перерывами</li>
-                    <li class="checklist-item">Начинайте с задач, которые клиент будет выполнять наиболее часто</li>
-                    <li class="checklist-item">Записывайте видеоинструкции для последующего использования клиентом</li>
-                    <li class="checklist-item">Предлагайте дополнительные консультации после основного обучения</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Раздел 4: Ведение переписки -->
-        <section id="correspondence" class="bg-white rounded-lg p-6 mb-8 shadow-md">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">4. Ведение переписки с клиентами</h2>
-            
-            <div class="flex mb-6">
-                <div class="w-1/2 pr-4">
-                    <h3 class="text-xl font-bold mb-4">Принципы эффективной переписки</h3>
-                    <p class="mb-4">
-                        Правильно организованная переписка с клиентами в чатах, по электронной почте и в CRM-системе — важная составляющая качественной технической поддержки. Следуя определенным правилам и используя шаблоны, вы сможете обеспечить быстрое и эффективное обслуживание.
-                    </p>
-                    <div class="tip-box p-4 rounded mb-4">
-                        <h4 class="font-bold mb-2">Ключевые принципы переписки:</h4>
-                        <ul class="pl-5">
-                            <li class="checklist-item">Оперативность ответа (не более 15-30 минут)</li>
-                            <li class="checklist-item">Персонализация обращения (используйте имя клиента)</li>
-                            <li class="checklist-item">Структурированность и ясность изложения</li>
-                            <li class="checklist-item">Грамотность и деловой стиль общения</li>
-                            <li class="checklist-item">Эмпатия и понимание проблемы клиента</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-1/2">
-                    <img src="https://aevrika.ru/media/f/2019/04/chat.jpg" alt="Переписка с клиентами" class="rounded-lg shadow-md w-full h-auto">
-                </div>
-            </div>
-
-            <div class="separator my-6"></div>
-
-            <h3 class="text-xl font-bold mb-4">Шаблоны сообщений для различных каналов коммуникации</h3>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <!-- Чаты -->
-                <div class="bg-white rounded shadow border p-4">
-                    <h4 class="font-bold mb-3 text-blue-700"><i class="fas fa-comments mr-2"></i>Шаблоны для чатов</h4>
-                    
-                    <details class="mb-3">
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">Приветствие в чате</summary>
-                        <div class="p-3 bg-gray-50 rounded-b mt-1 border-t">
-                            <p><strong>Шаблон:</strong> "Здравствуйте, [Имя клиента]! Меня зовут [Ваше имя], я специалист технической поддержки компании [Название компании]. Чем я могу вам помочь сегодня?"</p>
-                        </div>
-                    </details>
-                    
-                    <details class="mb-3">
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">Запрос дополнительной информации</summary>
-                        <div class="p-3 bg-gray-50 rounded-b mt-1 border-t">
-                            <p><strong>Шаблон:</strong> "Для более точной диагностики проблемы, пожалуйста, уточните: 1) Версию программы, которую вы используете; 2) Когда впервые возникла проблема; 3) Какие действия вы выполняли перед появлением ошибки."</p>
-                        </div>
-                    </details>
-                    
-                    <details class="mb-3">
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">Подтверждение решения проблемы</summary>
-                        <div class="p-3 bg-gray-50 rounded-b mt-1 border-t">
-                            <p><strong>Шаблон:</strong> "Отлично! Проблема успешно решена. Проверьте, пожалуйста, корректно ли сейчас работает [функция/система]. Есть ли еще вопросы, с которыми я могу вам помочь?"</p>
-                        </div>
-                    </details>
-                    
-                    <details>
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">Завершение разговора</summary>
-                        <div class="p-3 bg-gray-50 rounded-b mt-1 border-t">
-                            <p><strong>Шаблон:</strong> "Благодарю за обращение в нашу службу поддержки, [Имя клиента]! Если у вас возникнут дополнительные вопросы, не стесняйтесь обращаться. Желаю вам продуктивного дня!"</p>
-                        </div>
-                    </details>
-                </div>
-                
-                <!-- Электронная почта -->
-                <div class="bg-white rounded shadow border p-4">
-                    <h4 class="font-bold mb-3 text-blue-700"><i class="fas fa-envelope mr-2"></i>Шаблоны для Email</h4>
-                    
-                    <details class="mb-3">
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">Ответ на первичное обращение</summary>
-                        <div class="p-3 bg-gray-50 rounded-b mt-1 border-t">
-                            <p><strong>Тема:</strong> "RE: [Оригинальная тема] | Ваше обращение №[номер]"</p>
-                            <p class="mt-2"><strong>Текст:</strong> "Здравствуйте, [Имя клиента]!<br><br>Благодарим вас за обращение в службу технической поддержки компании [Название компании]. Я, [Ваше имя], буду заниматься вашим вопросом.<br><br>По описанной вами проблеме [краткое описание проблемы] хочу уточнить:<br>1. [Уточняющий вопрос 1]<br>2. [Уточняющий вопрос 2]<br><br>Эта информация поможет мне быстрее разобраться в ситуации и предложить оптимальное решение.<br><br>С уважением,<br>[Ваше имя]<br>Специалист технической поддержки<br>[Название компании]<br>[Контактный телефон]"</p>
-                        </div>
-                    </details>
-                    
-                    <details class="mb-3">
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">Предоставление решения</summary>
-                        <div class="p-3 bg-gray-50 rounded-b mt-1 border-t">
-                            <p><strong>Тема:</strong> "RE: [Оригинальная тема] | Решение вашего вопроса №[номер]"</p>
-                            <p class="mt-2"><strong>Текст:</strong> "Здравствуйте, [Имя клиента]!<br><br>Спасибо за предоставленную информацию. Я проанализировал(а) вашу ситуацию и предлагаю следующее решение:<br><br>1. [Шаг 1]<br>2. [Шаг 2]<br>3. [Шаг 3]<br><br>После выполнения этих действий, проблема должна быть устранена. Если у вас возникнут сложности или потребуется помощь в процессе выполнения указанных шагов, пожалуйста, свяжитесь со мной.<br><br>С уважением,<br>[Ваше имя]<br>Специалист технической поддержки<br>[Название компании]<br>[Контактный телефон]"</p>
-                        </div>
-                    </details>
-                    
-                    <details>
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">Запрос на удаленное подключение</summary>
-                        <div class="p-3 bg-gray-50 rounded-b mt-1 border-t">
-                            <p><strong>Тема:</strong> "RE: [Оригинальная тема] | Предложение удаленной помощи"</p>
-                            <p class="mt-2"><strong>Текст:</strong> "Здравствуйте, [Имя клиента]!<br><br>Для оперативного решения вашей проблемы предлагаю провести сеанс удаленного подключения к вашему компьютеру. Это позволит мне непосредственно диагностировать и устранить неполадку.<br><br>Для организации сеанса нам потребуется:<br><br>1. Установить программу [AnyDesk/TeamViewer] (ссылка на скачивание: [URL])<br>2. Сообщить мне ID и пароль для подключения<br><br>Пожалуйста, сообщите удобное для вас время для проведения сеанса удаленной поддержки.<br><br>С уважением,<br>[Ваше имя]<br>Специалист технической поддержки<br>[Название компании]<br>[Контактный телефон]"</p>
-                        </div>
-                    </details>
-                </div>
-                
-                <!-- CRM -->
-                <div class="bg-white rounded shadow border p-4">
-                    <h4 class="font-bold mb-3 text-blue-700"><i class="fas fa-database mr-2"></i>Шаблоны для CRM</h4>
-                    
-                    <details class="mb-3">
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">Создание заявки</summary>
-                        <div class="p-3 bg-gray-50 rounded-b mt-1 border-t">
-                            <p><strong>Шаблон:</strong><br><br>
-                            <strong>Тип обращения:</strong> [Техническая проблема/Консультация/Обучение]<br>
-                            <strong>Приоритет:</strong> [Низкий/Средний/Высокий/Критический]<br>
-                            <strong>Клиент:</strong> [Имя клиента], [Компания]<br>
-                            <strong>Контактная информация:</strong> [Email], [Телефон]<br>
-                            <strong>Описание проблемы:</strong> [Детальное описание проблемы со слов клиента]<br>
-                            <strong>Первичная диагностика:</strong> [Ваши первичные выводы]<br>
-                            <strong>Предполагаемое решение:</strong> [Предварительный план действий]<br>
-                            <strong>Ожидаемое время решения:</strong> [Срок]</p>
-                        </div>
-                    </details>
-                    
-                    <details class="mb-3">
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">Обновление статуса заявки</summary>
-                        <div class="p-3 bg-gray-50 rounded-b mt-1 border-t">
-                            <p><strong>Шаблон:</strong><br><br>
-                            <strong>Статус:</strong> [В работе/Ожидание ответа/Решена/Закрыта]<br>
-                            <strong>Выполненные действия:</strong><br>
-                            1. [Действие 1]<br>
-                            2. [Действие 2]<br>
-                            <strong>Результат:</strong> [Описание результата]<br>
-                            <strong>Следующие шаги:</strong> [Дальнейшие действия, если необходимы]<br>
-                            <strong>Комментарий для клиента:</strong> [Текст, который будет отправлен клиенту]</p>
-                        </div>
-                    </details>
-                    
-                    <details>
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">Закрытие заявки</summary>
-                        <div class="p-3 bg-gray-50 rounded-b mt-1 border-t">
-                            <p><strong>Шаблон:</strong><br><br>
-                            <strong>Статус:</strong> Закрыта<br>
-                            <strong>Решение:</strong> [Описание окончательного решения]<br>
-                            <strong>Время решения:</strong> [Фактическое время решения]<br>
-                            <strong>Рекомендации клиенту:</strong> [Дополнительные рекомендации для предотвращения подобных проблем]<br>
-                            <strong>Комментарий для клиента:</strong> "Уважаемый [Имя клиента], проблема успешно решена. [Краткое описание решения]. Если у вас возникнут дополнительные вопросы, пожалуйста, обращайтесь в нашу службу поддержки."<br>
-                            <strong>Внутренний комментарий:</strong> [Комментарий для коллег, если необходим]</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-
-            <div class="important-box p-4 rounded mb-6">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Важно помнить при переписке</h3>
-                <ul class="pl-5">
-                    <li class="checklist-item">Всегда адаптируйте шаблоны под конкретную ситуацию и клиента</li>
-                    <li class="checklist-item">Начинайте с приветствия и заканчивайте пожеланием</li>
-                    <li class="checklist-item">Избегайте технического жаргона без объяснений</li>
-                    <li class="checklist-item">Проверяйте сообщения на грамматические и орфографические ошибки</li>
-                    <li class="checklist-item">Не используйте заглавные буквы (КАПС) — это воспринимается как крик</li>
-                    <li class="checklist-item">Реагируйте на эмоциональное состояние клиента (признавайте его чувства)</li>
-                    <li class="checklist-item">Всегда фиксируйте переписку в CRM для истории взаимодействия</li>
-                </ul>
-            </div>
-
-            <div class="success-box p-4 rounded">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-check-circle mr-2"></i>Рекомендации по стилю общения</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <h4 class="font-bold mb-2">Используйте</h4>
-                        <ul class="pl-5">
-                            <li class="checklist-item">Позитивные формулировки ("Мы можем..." вместо "Мы не можем...")</li>
-                            <li class="checklist-item">Конкретные и точные формулировки</li>
-                            <li class="checklist-item">Деловой, но дружелюбный стиль</li>
-                            <li class="checklist-item">Эмпатические фразы ("Я понимаю вашу обеспокоенность...")</li>
-                            <li class="checklist-item">Вопросы для уточнения деталей</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold mb-2">Избегайте</h4>
-                        <ul class="pl-5">
-                            <li class="checklist-item">Отрицательных формулировок</li>
-                            <li class="checklist-item">Обвиняющих высказываний ("Вы неправильно сделали...")</li>
-                            <li class="checklist-item">Обещаний, которые нельзя выполнить</li>
-                            <li class="checklist-item">Фраз "Это не наша проблема" или "Мы этим не занимаемся"</li>
-                            <li class="checklist-item">Сленга и неформальных выражений</li>
-                        </ul>
-                    </div>
+                <div class="info-block info">
+                    <p><strong>Совет:</strong> Делайте паузы в разговоре, чтобы клиент мог обдумать информацию и задать уточняющие вопросы. Убедитесь, что клиент понял предоставленную информацию, прежде чем переходить к следующему шагу.</p>
                 </div>
             </div>
         </section>
-
-        <!-- Раздел 5: Типовые вопросы -->
-        <section id="typical-questions" class="bg-white rounded-lg p-6 mb-8 shadow-md">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">5. Ответы на типовые вопросы и быстрая диагностика</h2>
+        
+        <section id="section3">
+            <h2>3. Работа с удаленным подключением</h2>
             
-            <div class="flex mb-6">
-                <div class="w-1/2 pr-4">
-                    <h3 class="text-xl font-bold mb-4">Типовые вопросы клиентов</h3>
-                    <p class="mb-4">
-                        Клиенты часто обращаются с похожими вопросами и проблемами. Умение быстро диагностировать проблему по описанию и эффективно решать типовые вопросы — важнейший навык специалиста технической поддержки.
-                    </p>
-                    <div class="tip-box p-4 rounded mb-4">
-                        <h4 class="font-bold mb-2">Подход к диагностике:</h4>
-                        <ul class="pl-5">
-                            <li class="checklist-item">Внимательно выслушайте/прочитайте описание проблемы</li>
-                            <li class="checklist-item">Задайте уточняющие вопросы для получения полной картины</li>
-                            <li class="checklist-item">Выделите ключевые симптомы проблемы</li>
-                            <li class="checklist-item">Сопоставьте с известными сценариями проблем</li>
-                            <li class="checklist-item">Протестируйте предполагаемое решение</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-1/2">
-                    <img src="https://www.unicraft.org/wp-content/uploads/2023/12/%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81-13-1024x717.png" alt="Типовые вопросы клиентов" class="rounded-lg shadow-md w-full h-auto">
-                </div>
-            </div>
-
-            <div class="separator my-6"></div>
-
-            <h3 class="text-xl font-bold mb-4">Каталог типовых вопросов и решений</h3>
-            
-            <div class="mb-6">
-                <div class="bg-blue-50 p-4 rounded-t shadow">
-                    <h4 class="font-bold mb-0 text-blue-700">Категория: Проблемы с авторизацией</h4>
-                </div>
-                <div class="bg-white p-4 rounded-b shadow border-t-0 border">
-                    <details class="mb-4">
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">"Не могу войти в систему мониторинга. Пишет 'Неверный логин или пароль'"</summary>
-                        <div class="p-4 bg-gray-50 rounded-b mt-1 border-t">
-                            <p class="mb-2"><strong>Возможные причины:</strong></p>
-                            <ul class="list-disc pl-5 mb-3">
-                                <li>Ошибка при вводе учетных данных</li>
-                                <li>Капслок включен</li>
-                                <li>Неактивная учетная запись</li>
-                                <li>Пароль был изменен</li>
-                                <li>Блокировка после нескольких неудачных попыток</li>
-                            </ul>
-                            
-                            <p class="mb-2"><strong>Диагностика:</strong></p>
-                            <ol class="list-decimal pl-5 mb-3">
-                                <li>Уточните у клиента, правильно ли он вводит логин и пароль</li>
-                                <li>Спросите, включен ли Caps Lock</li>
-                                <li>Проверьте в админ-панели, не заблокирована ли учетная запись</li>
-                                <li>Уточните, пытается ли клиент войти через правильный URL (не на тестовую среду)</li>
-                            </ol>
-                            
-                            <p class="mb-2"><strong>Решение:</strong></p>
-                            <ol class="list-decimal pl-5 mb-3">
-                                <li>Попросите клиента проверить правильность ввода данных и отключить Caps Lock</li>
-                                <li>Если проблема не решена, предложите сбросить пароль</li>
-                                <li>Если учетная запись заблокирована, разблокируйте ее</li>
-                                <li>Пришлите клиенту правильную ссылку для входа</li>
-                                <li>В крайнем случае, создайте новую учетную запись</li>
-                            </ol>
-                            
-                            <p><strong>Шаблон ответа:</strong> "Понимаю вашу проблему с авторизацией. Давайте проверим несколько моментов: 1) Убедитесь, что Caps Lock выключен; 2) Проверьте правильность ввода логина и пароля без лишних пробелов; 3) Используйте корректный URL для входа: [ссылка]. Если проблема сохраняется, я могу отправить вам ссылку для сброса пароля на электронную почту, привязанную к учетной записи."</p>
-                        </div>
-                    </details>
-                    
-                    <details>
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">"Забыл/потерял пароль от учетной записи"</summary>
-                        <div class="p-4 bg-gray-50 rounded-b mt-1 border-t">
-                            <p class="mb-2"><strong>Диагностика:</strong></p>
-                            <ol class="list-decimal pl-5 mb-3">
-                                <li>Проверьте наличие учетной записи клиента в системе</li>
-                                <li>Убедитесь, что обращение поступило от авторизованного лица</li>
-                                <li>Проверьте, привязана ли к аккаунту электронная почта</li>
-                            </ol>
-                            
-                            <p class="mb-2"><strong>Решение:</strong></p>
-                            <ol class="list-decimal pl-5 mb-3">
-                                <li>Предложите клиенту воспользоваться функцией "Забыли пароль" на странице входа</li>
-                                <li>Если функция недоступна, выполните сброс пароля вручную</li>
-                                <li>Отправьте новые учетные данные на корпоративную почту клиента</li>
-                                <li>Порекомендуйте сменить временный пароль при первом входе</li>
-                            </ol>
-                            
-                            <p><strong>Шаблон ответа:</strong> "Я понимаю ситуацию с утерей пароля. Для восстановления доступа я отправил ссылку для сброса пароля на вашу корпоративную почту [email]. Пожалуйста, проверьте входящие сообщения и следуйте инструкциям в письме. После входа в систему рекомендую сразу изменить временный пароль на постоянный. Если у вас возникнут сложности, пожалуйста, сообщите мне."</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-            
-            <div class="mb-6">
-                <div class="bg-blue-50 p-4 rounded-t shadow">
-                    <h4 class="font-bold mb-0 text-blue-700">Категория: Проблемы с системой мониторинга</h4>
-                </div>
-                <div class="bg-white p-4 rounded-b shadow border-t-0 border">
-                    <details class="mb-4">
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">"Не отображается текущее местоположение транспортного средства"</summary>
-                        <div class="p-4 bg-gray-50 rounded-b mt-1 border-t">
-                            <p class="mb-2"><strong>Возможные причины:</strong></p>
-                            <ul class="list-disc pl-5 mb-3">
-                                <li>Проблемы с оборудованием GPS/ГЛОНАСС</li>
-                                <li>Отсутствие сигнала связи (GSM, GPRS)</li>
-                                <li>Неправильные настройки в системе мониторинга</li>
-                                <li>Транспортное средство находится в зоне отсутствия связи</li>
-                                <li>Разряд аккумулятора трекера</li>
-                            </ul>
-                            
-                            <p class="mb-2"><strong>Диагностика:</strong></p>
-                            <ol class="list-decimal pl-5 mb-3">
-                                <li>Проверьте время последнего сеанса связи с трекером</li>
-                                <li>Уточните у клиента, как давно возникла проблема</li>
-                                <li>Проверьте настройки объекта в системе мониторинга</li>
-                                <li>Выясните, находится ли ТС в зоне со слабым покрытием связи</li>
-                            </ol>
-                            
-                            <p class="mb-2"><strong>Решение:</strong></p>
-                            <ol class="list-decimal pl-5 mb-3">
-                                <li>Если трекер давно не выходил на связь — рекомендуйте проверить физическое состояние устройства</li>
-                                <li>Проверьте и скорректируйте настройки объекта в системе</li>
-                                <li>Предложите перезагрузить трекер (если это возможно удалённо или клиент имеет физический доступ)</li>
-                                <li>Если проблема в настройках, выполните их коррекцию через удаленное подключение</li>
-                            </ol>
-                            
-                            <p><strong>Шаблон ответа:</strong> "Судя по данным, последняя связь с GPS-трекером вашего автомобиля была [время/дата]. Возможные причины отсутствия данных о местоположении: 1) Транспортное средство находится вне зоны действия GSM-сети; 2) Проблемы с питанием трекера; 3) Неисправность GPS-модуля. Рекомендую проверить физическое состояние устройства и уровень заряда аккумулятора. Также я удаленно проверил настройки системы — с нашей стороны все корректно настроено. Сообщите, пожалуйста, когда транспортное средство вернется в зону покрытия сети, и мы сможем выполнить удаленную диагностику трекера."</p>
-                        </div>
-                    </details>
-                    
-                    <details>
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">"Не могу сформировать отчет по расходу топлива"</summary>
-                        <div class="p-4 bg-gray-50 rounded-b mt-1 border-t">
-                            <p class="mb-2"><strong>Возможные причины:</strong></p>
-                            <ul class="list-disc pl-5 mb-3">
-                                <li>Отсутствуют данные от датчика уровня топлива</li>
-                                <li>Неправильные настройки расчета расхода</li>
-                                <li>Не настроен расчетный бак для ТС</li>
-                                <li>Выбран неверный период для формирования отчета</li>
-                                <li>Недостаточно прав для создания отчетов</li>
-                            </ul>
-                            
-                            <p class="mb-2"><strong>Диагностика:</strong></p>
-                            <ol class="list-decimal pl-5 mb-3">
-                                <li>Уточните у клиента конкретную ошибку при формировании отчета</li>
-                                <li>Проверьте наличие данных от датчиков за выбранный период</li>
-                                <li>Проверьте настройки расчета топлива для данного транспортного средства</li>
-                                <li>Убедитесь, что у клиента достаточно прав для работы с отчетами</li>
-                            </ol>
-                            
-                            <p class="mb-2"><strong>Решение:</strong></p>
-                            <ol class="list-decimal pl-5 mb-3">
-                                <li>Настройте параметры расчета топлива (если не настроены)</li>
-                                <li>Проверьте и откалибруйте датчик уровня топлива</li>
-                                <li>Объясните клиенту корректный процесс формирования отчета</li>
-                                <li>При необходимости предоставьте расширенные права доступа</li>
-                            </ol>
-                            
-                            <p><strong>Шаблон ответа:</strong> "По вашему вопросу о формировании отчета по расходу топлива: я проверил настройки вашей системы и обнаружил, что для автомобиля [марка/гос.номер] не настроен расчетный топливный бак. Это необходимый параметр для формирования корректных отчетов. Предлагаю провести удаленное подключение, чтобы я мог настроить все необходимые параметры и показать процесс формирования отчета. Также я подготовил для вас краткую инструкцию по формированию отчетов по расходу топлива, которую отправлю на вашу почту."</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-            
-            <div class="mb-6">
-                <div class="bg-blue-50 p-4 rounded-t shadow">
-                    <h4 class="font-bold mb-0 text-blue-700">Категория: Интеграция и подключение</h4>
-                </div>
-                <div class="bg-white p-4 rounded-b shadow border-t-0 border">
-                    <details>
-                        <summary class="p-2 bg-gray-100 rounded cursor-pointer">"Как интегрировать данные из системы мониторинга в нашу учетную систему?"</summary>
-                        <div class="p-4 bg-gray-50 rounded-b mt-1 border-t">
-                            <p class="mb-2"><strong>Диагностика:</strong></p>
-                            <ol class="list-decimal pl-5 mb-3">
-                                <li>Выясните, какую систему учета использует клиент</li>
-                                <li>Уточните, какие данные требуется интегрировать</li>
-                                <li>Определите, поддерживается ли интеграция с данной системой учета</li>
-                                <li>Проверьте, есть ли у клиента необходимые права доступа для интеграции</li>
-                            </ol>
-                            
-                            <p class="mb-2"><strong>Решение:</strong></p>
-                            <ol class="list-decimal pl-5 mb-3">
-                                <li>Если интеграция поддерживается, предоставьте документацию по API</li>
-                                <li>Предложите готовое решение для интеграции, если оно существует</li>
-                                <li>Объясните процесс настройки экспорта/импорта данных</li>
-                                <li>При необходимости привлеките специалиста по интеграции</li>
-                            </ol>
-                            
-                            <p><strong>Шаблон ответа:</strong> "Спасибо за ваш запрос о возможностях интеграции. Наша система мониторинга поддерживает интеграцию с различными учетными системами через API и экспорт данных. Для вашей системы [название системы учета] у нас есть [готовое решение/документация по интеграции]. Я могу предоставить вам детальную техническую документацию, а также организовать консультацию с нашим специалистом по интеграции. Пожалуйста, уточните, какие конкретно данные (пробег, расход топлива, время работы и т.д.) вам необходимо интегрировать в вашу систему учета, чтобы я мог предоставить более точную информацию."</p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-
-            <div class="important-box p-4 rounded mb-6">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Техника быстрой диагностики</h3>
-                <ol class="list-decimal pl-5">
-                    <li class="mb-2"><strong>Шаг 1: Сбор информации</strong><br>Задавайте целенаправленные вопросы, которые помогут выявить суть проблемы. Избегайте общих вопросов.</li>
-                    <li class="mb-2"><strong>Шаг 2: Категоризация проблемы</strong><br>Определите, к какой категории относится проблема (авторизация, оборудование, настройки, отчеты и т.д.).</li>
-                    <li class="mb-2"><strong>Шаг 3: Проверка типовых причин</strong><br>Начните с проверки наиболее распространенных причин возникновения данной проблемы.</li>
-                    <li class="mb-2"><strong>Шаг 4: Изоляция проблемы</strong><br>Если проблема не типовая, систематически исключайте возможные причины, чтобы изолировать истинный источник.</li>
-                    <li class="mb-2"><strong>Шаг 5: Тестирование решения</strong><br>После выявления предполагаемой причины, протестируйте решение прежде чем предлагать его клиенту.</li>
+            <div id="section3-1">
+                <h3>3.1 Инструменты удаленного доступа</h3>
+                <p>Для решения технических проблем клиентов мы используем программы <strong>AnyDesk</strong> и <strong>TeamViewer</strong>. Эти инструменты позволяют получить доступ к компьютеру клиента с его разрешения для оказания оперативной помощи.</p>
+                
+                <h4>Преимущества удаленного подключения:</h4>
+                <ul class="list-disc ml-6 my-4">
+                    <li>Быстрое выявление и устранение проблем</li>
+                    <li>Возможность наглядно продемонстрировать работу системы</li>
+                    <li>Обучение клиента в режиме реального времени</li>
+                    <li>Сокращение времени решения проблемы</li>
+                </ul>
+                
+                <h3>Подключение через AnyDesk</h3>
+                <img src="https://anydesk.help/wp-content/uploads/2021/04/3-Podtverzhdenie.png" alt="Подключение через AnyDesk" class="my-4 max-w-full">
+                
+                <ol class="list-decimal ml-6 my-4">
+                    <li class="mb-2">
+                        <strong>Инструктаж клиента:</strong> Попросите клиента скачать и установить AnyDesk с официального сайта <a href="https://anydesk.com/ru" class="text-blue-600 hover:underline" target="_blank">anydesk.com</a>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Получение ID:</strong> После установки клиент увидит свой AnyDesk-адрес (ID) — попросите сообщить его вам
+                    </li>
+                    <li class="mb-2">
+                        <strong>Подключение:</strong> Введите полученный ID в своем приложении AnyDesk и нажмите "Подключиться"
+                    </li>
+                    <li class="mb-2">
+                        <strong>Подтверждение:</strong> Клиент должен принять запрос на подключение, нажав кнопку "Разрешить" или "Принять"
+                    </li>
+                    <li class="mb-2">
+                        <strong>Управление:</strong> После подключения вы получите доступ к экрану клиента и сможете управлять его компьютером
+                    </li>
                 </ol>
             </div>
-
-            <div class="success-box p-4 rounded">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-check-circle mr-2"></i>Советы для эффективной диагностики</h3>
-                <ul class="pl-5">
-                    <li class="checklist-item">Создавайте и регулярно обновляйте собственную базу знаний с типовыми проблемами и решениями</li>
-                    <li class="checklist-item">Используйте скрипты диагностики для каждой категории проблем</li>
-                    <li class="checklist-item">Документируйте все шаги диагностики и решения проблемы для будущего использования</li>
-                    <li class="checklist-item">Прежде чем предлагать сложные решения, убедитесь, что проблема не вызвана простыми причинами</li>
-                    <li class="checklist-item">Делитесь опытом и успешными решениями с коллегами</li>
+            
+            <div id="section3-3">
+                <h3>3.2 Меры безопасности при удаленном подключении</h3>
+                
+                <ul class="list-disc ml-6 my-4">
+                    <li>Всегда уведомляйте клиента о действиях, которые вы собираетесь выполнить</li>
+                    <li>Не запрашивайте конфиденциальную информацию (пароли от личных аккаунтов и т.д.)</li>
+                    <li>Не проводите никаких действий без согласия клиента</li>
+                    <li>По завершении работы обязательно завершите сеанс удаленного доступа</li>
+                    <li>Объясняйте клиенту каждый шаг своих действий для поддержания доверия</li>
                 </ul>
+                
+                <div class="info-block info">
+                    <p><strong>Рекомендации при проблемах с установкой:</strong></p>
+                    <ul class="list-disc ml-6 my-2">
+                        <li>Предложите клиенту использовать портативную версию программы (без установки)</li>
+                        <li>При проблемах с одной программой предложите альтернативу (AnyDesk вместо TeamViewer или наоборот)</li>
+                        <li>Имейте готовые подробные инструкции с скриншотами, которые можно отправить клиенту по электронной почте</li>
+                    </ul>
+                </div>
             </div>
         </section>
-
-        <!-- Раздел 6: Повышение доверия клиента -->
-        <section id="client-trust" class="bg-white rounded-lg p-6 mb-8 shadow-md">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">6. Повышение доверия клиента к компании</h2>
+        
+        <section id="section4">
+            <h2>4. Работа с системами и мессенджерами</h2>
             
-            <div class="flex mb-6">
-                <div class="w-1/2 pr-4">
-                    <h3 class="text-xl font-bold mb-4">Стратегии укрепления доверия</h3>
-                    <p class="mb-4">
-                        Технический специалист — это не просто решатель проблем, но и представитель компании, который напрямую влияет на формирование доверия клиента к бренду. Повышение доверия клиентов ведет к их долгосрочной лояльности.
+            <div id="section4-1">
+                <h3>4.1 Работа с OkDesk</h3>
+                <p>OkDesk — это облачная help desk система для автоматизации процессов техподдержки, сервиса и выездного обслуживания.</p>
+                
+                <h4>Основные функции OkDesk:</h4>
+                <ul class="list-disc ml-6 my-4">
+                    <li>Регистрация и обработка заявок от клиентов</li>
+                    <li>Отслеживание статусов и истории взаимодействия</li>
+                    <li>Настройка автоматических уведомлений</li>
+                    <li>Формирование отчетов</li>
+                    <li>Управление базой знаний</li>
+                </ul>
+                
+                <h4>Алгоритм работы с заявкой в OkDesk:</h4>
+                <ol class="list-decimal ml-6 my-4">
+                    <li class="mb-2">
+                        <strong>Прием заявки:</strong> Получение уведомления о новой заявке, ознакомление с содержанием
+                    </li>
+                    <li class="mb-2">
+                        <strong>Назначение исполнителя:</strong> Если заявка не назначена автоматически, необходимо назначить исполнителя
+                    </li>
+                    <li class="mb-2">
+                        <strong>Уточнение деталей:</strong> При необходимости запросить дополнительную информацию у клиента
+                    </li>
+                    <li class="mb-2">
+                        <strong>Решение проблемы:</strong> Выполнение необходимых действий для решения проблемы
+                    </li>
+                    <li class="mb-2">
+                        <strong>Информирование клиента:</strong> Сообщение о решении проблемы или о ходе выполнения работ
+                    </li>
+                    <li class="mb-2">
+                        <strong>Закрытие заявки:</strong> После получения подтверждения от клиента о решении проблемы
+                    </li>
+                </ol>
+                
+                <div class="info-block info">
+                    <p><strong>Важно!</strong> Всегда фиксируйте в заявке все действия, которые вы предприняли для решения проблемы, даже если они не привели к успеху. Это поможет другим специалистам, если им придется работать с этой заявкой.</p>
+                </div>
+            </div>
+            
+            <div id="section4-2">
+                <h3>4.2 Работа с WhatsApp Business</h3>
+                <p>WhatsApp Business позволяет эффективно взаимодействовать с клиентами через популярный мессенджер.</p>
+                
+                <h4>Правила общения с клиентами в WhatsApp:</h4>
+                <ol class="list-decimal ml-6 my-4">
+                    <li class="mb-2">
+                        <strong>Оперативность ответов:</strong> Старайтесь отвечать клиенту в течение 15-30 минут в рабочее время
+                    </li>
+                    <li class="mb-2">
+                        <strong>Деловой стиль общения:</strong> Соблюдайте профессиональный, но дружелюбный тон
+                    </li>
+                    <li class="mb-2">
+                        <strong>Структурированность сообщений:</strong> Делите длинные сообщения на логические части
+                    </li>
+                    <li class="mb-2">
+                        <strong>Использование шаблонов:</strong> Для типовых ответов используйте готовые шаблоны
+                    </li>
+                    <li class="mb-2">
+                        <strong>Завершение диалога вопросом:</strong> Увеличивает вероятность продолжения диалога на 60%
+                    </li>
+                </ol>
+                
+                <h4>Особенности WhatsApp Business:</h4>
+                <ul class="list-disc ml-6 my-4">
+                    <li>При общении через WhatsApp Business API первым можно отправить только шаблонное сообщение</li>
+                    <li>Окно отклика клиента - 24 часа, после чего снова можно использовать только шаблоны</li>
+                    <li>Можно создавать каталоги продуктов и услуг</li>
+                    <li>Доступна настройка быстрых ответов</li>
+                </ul>
+            </div>
+            
+            <div id="section4-3">
+                <h3>4.3 Работа с Telegram</h3>
+                <p>Telegram предоставляет удобные инструменты для оперативной коммуникации с клиентами.</p>
+                
+                <h4>Преимущества использования Telegram:</h4>
+                <ul class="list-disc ml-6 my-4">
+                    <li>Быстрый обмен сообщениями, файлами и медиаконтентом</li>
+                    <li>Возможность создания групповых чатов для обсуждения проектов</li>
+                    <li>Использование ботов для автоматизации рутинных задач</li>
+                    <li>Синхронизация истории сообщений на всех устройствах</li>
+                </ul>
+                
+                <h4>Рекомендации по работе в Telegram:</h4>
+                <ol class="list-decimal ml-6 my-4">
+                    <li class="mb-2">
+                        <strong>Использование бизнес-аккаунта:</strong> Создайте отдельный аккаунт для рабочих целей
+                    </li>
+                    <li class="mb-2">
+                        <strong>Настройка уведомлений:</strong> Включите уведомления, чтобы оперативно отвечать на запросы
+                    </li>
+                    <li class="mb-2">
+                        <strong>Использование папок:</strong> Организуйте чаты с клиентами по категориям
+                    </li>
+                    <li class="mb-2">
+                        <strong>Закрепление важных сообщений:</strong> Для быстрого доступа к критической информации
+                    </li>
+                </ol>
+                
+                <div class="info-block warning">
+                    <p><strong>Важно!</strong> В мессенджерах сохраняйте официальный стиль общения, избегайте сленга и эмодзи (за исключением случаев, когда клиент сам задает неформальный тон).</p>
+                </div>
+            </div>
+            
+            <div id="section4-4">
+                <h3>4.4 Работа с Bitrix24</h3>
+                <p>Bitrix24 — это комплексная система управления бизнесом, включающая CRM, управление задачами, документами и коммуникациями.</p>
+                
+                <h4>Основные функции Bitrix24 для техподдержки:</h4>
+                <ul class="list-disc ml-6 my-4">
+                    <li>Регистрация и отслеживание обращений клиентов</li>
+                    <li>Работа с задачами и проектами</li>
+                    <li>Интеграция с каналами коммуникаций (почта, соцсети, мессенджеры)</li>
+                    <li>Хранение базы знаний и документации</li>
+                    <li>Аналитика и отчетность по обращениям</li>
+                </ul>
+                
+                <h4>Алгоритм обработки заявок в Bitrix24:</h4>
+                <ol class="list-decimal ml-6 my-4">
+                    <li class="mb-2">
+                        <strong>Создание заявки:</strong> Регистрация обращения клиента в системе
+                    </li>
+                    <li class="mb-2">
+                        <strong>Классификация:</strong> Определение типа обращения, приоритета и ответственного специалиста
+                    </li>
+                    <li class="mb-2">
+                        <strong>Назначение сроков:</strong> Установка дедлайнов в соответствии с SLA
+                    </li>
+                    <li class="mb-2">
+                        <strong>Обработка:</strong> Выполнение необходимых действий и коммуникация с клиентом
+                    </li>
+                    <li class="mb-2">
+                        <strong>Фиксация результатов:</strong> Документирование всех действий и решений
+                    </li>
+                    <li class="mb-2">
+                        <strong>Закрытие заявки:</strong> Получение подтверждения от клиента и закрытие обращения
+                    </li>
+                </ol>
+                
+                <div class="info-block info">
+                    <p><strong>Совет по автоматизации:</strong> Используйте бизнес-процессы Bitrix24 для автоматического уведомления клиентов о статусе заявки и напоминания специалистам о приближающихся сроках.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="section5">
+            <h2>5. Обучение клиентов системам мониторинга</h2>
+            
+            <div id="section5-1">
+                <h3>5.1 Система Wialon</h3>
+                <p>Wialon — это профессиональная система мониторинга транспорта, позволяющая отслеживать местоположение и состояние транспортных средств в режиме реального времени.</p>
+                
+                <img src="https://wialon.com/resource/new-design/wialon/main-mockup-en.png" alt="Система Wialon" class="my-4 max-w-full">
+                
+                <h4>Базовые функции Wialon:</h4>
+                <ul class="list-disc ml-6 my-4">
+                    <li>Мониторинг местоположения и перемещений транспортных средств</li>
+                    <li>Контроль расхода топлива и выявление сливов</li>
+                    <li>Контроль соблюдения маршрутов и графиков</li>
+                    <li>Формирование отчетов по различным параметрам</li>
+                    <li>Настройка уведомлений о событиях и нарушениях</li>
+                    <li>Работа с геозонами</li>
+                </ul>
+                
+                <h4>План обучения клиентов работе с Wialon:</h4>
+                <ol class="list-decimal ml-6 my-4">
+                    <li class="mb-2">
+                        <strong>Вход в систему и базовый интерфейс (15 минут)</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Авторизация в системе</li>
+                            <li>Обзор главного экрана и панели управления</li>
+                            <li>Настройка основных параметров пользователя</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Работа с объектами мониторинга и картой (20 минут)</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Просмотр списка объектов и их группировка</li>
+                            <li>Работа с картой и слоями</li>
+                            <li>Отслеживание объектов в реальном времени</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Формирование отчетов (30 минут)</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Создание и настройка отчетов</li>
+                            <li>Использование готовых шаблонов</li>
+                            <li>Экспорт отчетов в различные форматы</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Настройка геозон и уведомлений (20 минут)</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Создание и редактирование геозон</li>
+                            <li>Настройка условий для уведомлений</li>
+                            <li>Способы получения уведомлений (email, SMS)</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Практические задания и ответы на вопросы (30 минут)</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Решение реальных задач клиента</li>
+                            <li>Проверка усвоения материала</li>
+                            <li>Ответы на специфические вопросы</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                </div>
+            
+            <div id="section5-2">
+                <h3>5.2 Система ГлонассСофт</h3>
+                <p>ГлонассСофт — отечественная система мониторинга транспорта, обеспечивающая контроль над техникой и оптимизацию транспортных процессов.</p>
+                
+                <img src="https://glonasss.com/wp-content/uploads/2023/03/Gurtam-Wialon-screen-1-min.jpg" alt="Интерфейс ГлонассСофт" class="my-4 max-w-full">
+                
+                <h4>Базовые функции ГлонассСофт:</h4>
+                <ul class="list-disc ml-6 my-4">
+                    <li>Отслеживание местоположения и движения транспорта в реальном времени</li>
+                    <li>Контроль параметров работы техники (скорость, расход топлива и т.д.)</li>
+                    <li>Построение и контроль маршрутов</li>
+                    <li>Формирование отчетов по различным параметрам работы</li>
+                    <li>Создание и мониторинг геозон</li>
+                    <li>Анализ поведения водителей</li>
+                </ul>
+                
+                <h4>План обучения клиентов работе с ГлонассСофт:</h4>
+                <ol class="list-decimal ml-6 my-4">
+                    <li class="mb-2">
+                        <strong>Знакомство с интерфейсом (15 минут)</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Авторизация в системе</li>
+                            <li>Обзор главного экрана</li>
+                            <li>Настройка рабочего пространства</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Мониторинг объектов и работа с картой (20 минут)</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Просмотр списка объектов мониторинга</li>
+                            <li>Работа с картой и слоями</li>
+                            <li>Получение информации об объекте в режиме реального времени</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Создание и настройка отчетов (25 минут)</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Обзор доступных типов отчетов</li>
+                            <li>Настройка параметров отчета</li>
+                            <li>Экспорт и анализ результатов</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Настройка уведомлений и контрольных точек (20 минут)</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Создание контрольных точек и геозон</li>
+                            <li>Настройка уведомлений о событиях</li>
+                            <li>Способы получения уведомлений</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Практические задания (35 минут)</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Выполнение задач на основе потребностей клиента</li>
+                            <li>Проверка усвоения навыков</li>
+                            <li>Ответы на вопросы</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div id="section5-3">
+                <h3>5.3 Методика обучения клиентов</h3>
+                
+                <h4>Подготовка к обучению:</h4>
+                <ul class="list-disc ml-6 my-4">
+                    <li>Уточните уровень технической подготовки клиента</li>
+                    <li>Выясните конкретные задачи, которые клиент планирует решать с помощью системы</li>
+                    <li>Подготовьте учебные материалы и примеры, соответствующие потребностям клиента</li>
+                    <li>Убедитесь, что у клиента есть доступ к системе с необходимыми правами</li>
+                </ul>
+                
+                <h4>Эффективные методы обучения:</h4>
+                <ol class="list-decimal ml-6 my-4">
+                    <li class="mb-2">
+                        <strong>Метод "покажи — объясни — повтори"</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Сначала демонстрируйте функцию</li>
+                            <li>Затем объясняйте, как и зачем она работает</li>
+                            <li>Просите клиента повторить действия самостоятельно</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Практический подход</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Используйте реальные данные клиента для демонстрации</li>
+                            <li>Решайте актуальные для клиента задачи</li>
+                            <li>Показывайте практическую пользу каждой функции</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Структурированное обучение</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Разбивайте обучение на короткие сессии (30-40 минут)</li>
+                            <li>Двигайтесь от простого к сложному</li>
+                            <li>Делайте перерывы для закрепления информации</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="info-block success">
+                    <p><strong>Рекомендации:</strong></p>
+                    <ul class="list-disc ml-6 my-2">
+                        <li>Создайте "шпаргалку" с основными функциями для клиента</li>
+                        <li>Запишите обучающие видео для последующего использования</li>
+                        <li>Предоставьте ссылки на официальную документацию</li>
+                        <li>Планируйте последующие консультации для закрепления знаний</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="section6">
+            <h2>6. Ведение переписки по шаблонам</h2>
+            
+            <div id="section6-1">
+                <h3>6.1 Шаблоны для чатов</h3>
+                <p>Шаблоны сообщений для мессенджеров помогают быстро и эффективно отвечать на типовые запросы клиентов, сохраняя единый стиль коммуникации.</p>
+                
+                <h4>Шаблон приветствия:</h4>
+                <div class="step">
+                    <p class="text-gray-700 italic">"Здравствуйте, [Имя клиента]! Меня зовут [Ваше имя], я специалист технической поддержки компании [Название компании]. Чем я могу вам помочь сегодня?"</p>
+                </div>
+                
+                <h4>Шаблон запроса дополнительной информации:</h4>
+                <div class="step">
+                    <p class="text-gray-700 italic">"Для более точной диагностики проблемы, пожалуйста, уточните: 1) Версию программы, которую вы используете; 2) Когда впервые возникла проблема; 3) Какие действия вы выполняли перед появлением ошибки."</p>
+                </div>
+                
+                <h4>Шаблон подтверждения решения проблемы:</h4>
+                <div class="step">
+                    <p class="text-gray-700 italic">"Отлично! Проблема успешно решена. Проверьте, пожалуйста, корректно ли сейчас работает [функция/система]. Есть ли еще вопросы, с которыми я могу вам помочь?"</p>
+                </div>
+                
+                <h4>Шаблон завершения разговора:</h4>
+                <div class="step">
+                    <p class="text-gray-700 italic">"Благодарю за обращение в нашу службу поддержки, [Имя клиента]! Если у вас возникнут дополнительные вопросы, не стесняйтесь обращаться. Желаю вам продуктивного дня!"</p>
+                </div>
+                
+                <div class="info-block info">
+                    <p><strong>Важно!</strong> Всегда адаптируйте шаблоны под конкретную ситуацию. Шаблоны должны служить основой, а не заменой осмысленной коммуникации.</p>
+                </div>
+            </div>
+            
+            <div id="section6-2">
+                <h3>6.2 Шаблоны для Email</h3>
+                
+                <h4>Шаблон ответа на первичное обращение:</h4>
+                <div class="step">
+                    <p><strong>Тема:</strong> "RE: [Оригинальная тема] | Ваше обращение №[номер]"</p>
+                    <p class="text-gray-700 italic">
+                        "Здравствуйте, [Имя клиента]!<br><br>
+                        
+                        Благодарим вас за обращение в службу технической поддержки компании [Название компании]. Я, [Ваше имя], буду заниматься вашим вопросом.<br><br>
+                        
+                        По описанной вами проблеме [краткое описание проблемы] хочу уточнить:<br>
+                        1. [Уточняющий вопрос 1]<br>
+                        2. [Уточняющий вопрос 2]<br><br>
+                        
+                        Эта информация поможет мне быстрее разобраться в ситуации и предложить оптимальное решение.<br><br>
+                        
+                        С уважением,<br>
+                        [Ваше имя]<br>
+                        Специалист технической поддержки<br>
+                        [Название компании]<br>
+                        [Контактный телефон]"
                     </p>
-                    <div class="tip-box p-4 rounded mb-4">
-                        <h4 class="font-bold mb-2">Ключевые факторы доверия:</h4>
-                        <ul class="pl-5">
-                            <li class="checklist-item">Компетентность и профессионализм</li>
-                            <li class="checklist-item">Честность и прозрачность</li>
-                            <li class="checklist-item">Оперативность и надежность</li>
-                            <li class="checklist-item">Эмпатия и внимание к потребностям</li>
-                            <li class="checklist-item">Последовательность действий</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-1/2">
-                    <img src="https://okdesk.ru/upload/iblock/757/2r24no2az9uanblwg5wu1mbd8c0c12to.jpg" alt="Повышение доверия клиентов" class="rounded-lg shadow-md w-full h-auto">
-                </div>
-            </div>
-
-            <div class="separator my-6"></div>
-
-            <h3 class="text-xl font-bold mb-4">Практические приемы повышения доверия</h3>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div class="bg-white rounded shadow border p-4">
-                    <h4 class="font-bold mb-3 text-green-700"><i class="fas fa-handshake mr-2"></i>В процессе обслуживания</h4>
-                    
-                    <ul class="pl-5 mb-4">
-                        <li class="checklist-item"><strong>Будьте проактивны</strong> — предвосхищайте возможные проблемы и предлагайте их решения</li>
-                        <li class="checklist-item"><strong>Объясняйте свои действия</strong> — клиент должен понимать, что и зачем вы делаете</li>
-                        <li class="checklist-item"><strong>Говорите понятным языком</strong> — избегайте сложных технических терминов без объяснения</li>
-                        <li class="checklist-item"><strong>Признавайте ошибки</strong> — если компания допустила ошибку, честно признайте это</li>
-                        <li class="checklist-item"><strong>Предоставляйте контроль</strong> — спрашивайте разрешения перед выполнением действий</li>
-                        <li class="checklist-item"><strong>Соблюдайте конфиденциальность</strong> — не разглашайте информацию о клиенте</li>
-                        <li class="checklist-item"><strong>Демонстрируйте экспертность</strong> — показывайте знание продукта и отрасли</li>
-                    </ul>
-                    
-                    <div class="bg-green-50 p-3 rounded">
-                        <p class="text-sm italic">"Я понимаю, насколько важно для вас время безотказной работы оборудования. Позвольте предложить дополнительную настройку оповещений, которая поможет предотвратить подобные ситуации в будущем."</p>
-                    </div>
                 </div>
                 
-                <div class="bg-white rounded shadow border p-4">
-                    <h4 class="font-bold mb-3 text-green-700"><i class="fas fa-chart-line mr-2"></i>После решения проблемы</h4>
-                    
-                    <ul class="pl-5 mb-4">
-                        <li class="checklist-item"><strong>Предоставляйте дополнительную ценность</strong> — рекомендации, советы по оптимизации</li>
-                        <li class="checklist-item"><strong>Следите за результатами</strong> — проактивно проверяйте, не возникла ли проблема снова</li>
-                        <li class="checklist-item"><strong>Запрашивайте обратную связь</strong> — показывайте, что мнение клиента важно</li>
-                        <li class="checklist-item"><strong>Отправляйте сопроводительные материалы</strong> — инструкции, подсказки, руководства</li>
-                        <li class="checklist-item"><strong>Устанавливайте график проверок</strong> — предлагайте периодические консультации</li>
-                        <li class="checklist-item"><strong>Благодарите за сотрудничество</strong> — показывайте, что цените клиента</li>
-                        <li class="checklist-item"><strong>Информируйте об улучшениях</strong> — сообщайте о новых функциях и обновлениях</li>
-                    </ul>
-                    
-                    <div class="bg-green-50 p-3 rounded">
-                        <p class="text-sm italic">"Рад, что проблема решена. Я подготовил для вас краткую инструкцию по предотвращению подобных ситуаций. Также предлагаю через неделю провести короткую сессию, чтобы убедиться, что все работает стабильно и ответить на возможные вопросы."</p>
-                    </div>
+                <h4>Шаблон предоставления решения:</h4>
+                <div class="step">
+                    <p><strong>Тема:</strong> "RE: [Оригинальная тема] | Решение вашего вопроса №[номер]"</p>
+                    <p class="text-gray-700 italic">
+                        "Здравствуйте, [Имя клиента]!<br><br>
+                        
+                        Спасибо за предоставленную информацию. Я проанализировал(а) вашу ситуацию и предлагаю следующее решение:<br><br>
+                        
+                        1. [Шаг 1]<br>
+                        2. [Шаг 2]<br>
+                        3. [Шаг 3]<br><br>
+                        
+                        После выполнения этих действий, проблема должна быть устранена. Если у вас возникнут сложности или потребуется помощь в процессе выполнения указанных шагов, пожалуйста, свяжитесь со мной.<br><br>
+                        
+                        С уважением,<br>
+                        [Ваше имя]<br>
+                        Специалист технической поддержки<br>
+                        [Название компании]<br>
+                        [Контактный телефон]"
+                    </p>
+                </div>
+                
+                <h4>Шаблон запроса на удаленное подключение:</h4>
+                <div class="step">
+                    <p><strong>Тема:</strong> "RE: [Оригинальная тема] | Предложение удаленной помощи"</p>
+                    <p class="text-gray-700 italic">
+                        "Здравствуйте, [Имя клиента]!<br><br>
+                        
+                        Для оперативного решения вашей проблемы предлагаю провести сеанс удаленного подключения к вашему компьютеру. Это позволит мне непосредственно диагностировать и устранить неполадку.<br><br>
+                        
+                        Для организации сеанса нам потребуется:<br><br>
+                        
+                        1. Установить программу [AnyDesk/TeamViewer] (ссылка на скачивание: [URL])<br>
+                        2. Сообщить мне ID и пароль для подключения<br><br>
+                        
+                        Пожалуйста, сообщите удобное для вас время для проведения сеанса удаленной поддержки.<br><br>
+                        
+                        С уважением,<br>
+                        [Ваше имя]<br>
+                        Специалист технической поддержки<br>
+                        [Название компании]<br>
+                        [Контактный телефон]"
+                    </p>
                 </div>
             </div>
             
-            <div class="bg-white rounded shadow border p-4 mb-6">
-                <h4 class="font-bold mb-3 text-green-700"><i class="fas fa-shield-alt mr-2"></i>Устранение недоверия и работа с негативом</h4>
+            <div id="section6-3">
+                <h3>6.3 Шаблоны для CRM</h3>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <h5 class="font-bold mb-2">Типичные причины недоверия:</h5>
-                        <ul class="pl-5 mb-4">
-                            <li class="checklist-item">Негативный опыт взаимодействия в прошлом</li>
-                            <li class="checklist-item">Нарушенные обещания со стороны компании</li>
-                            <li class="checklist-item">Расхождение слов и действий</li>
-                            <li class="checklist-item">Отсутствие прозрачности в отношениях</li>
-                            <li class="checklist-item">Медленное реагирование на проблемы</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h5 class="font-bold mb-2">Стратегии преодоления недоверия:</h5>
-                        <ul class="pl-5 mb-4">
-                            <li class="checklist-item">Признание прошлых ошибок и их исправление</li>
-                            <li class="checklist-item">Предоставление четких и реалистичных обещаний</li>
-                            <li class="checklist-item">Демонстрация конкретных результатов работы</li>
-                            <li class="checklist-item">Установление четких ожиданий</li>
-                            <li class="checklist-item">Быстрое реагирование на обращения</li>
-                        </ul>
-                    </div>
+                <h4>Шаблон создания заявки:</h4>
+                <div class="step">
+                    <p class="text-gray-700 italic">
+                        <strong>Тип обращения:</strong> [Техническая проблема/Консультация/Обучение]<br>
+                        <strong>Приоритет:</strong> [Низкий/Средний/Высокий/Критический]<br>
+                        <strong>Клиент:</strong> [Имя клиента], [Компания]<br>
+                        <strong>Контактная информация:</strong> [Email], [Телефон]<br>
+                        <strong>Описание проблемы:</strong> [Детальное описание проблемы со слов клиента]<br>
+                        <strong>Первичная диагностика:</strong> [Ваши первичные выводы]<br>
+                        <strong>Предполагаемое решение:</strong> [Предварительный план действий]<br>
+                        <strong>Ожидаемое время решения:</strong> [Срок]
+                    </p>
                 </div>
                 
-                <div class="bg-yellow-50 p-3 rounded">
-                    <h5 class="font-bold mb-2">Алгоритм работы с недовольным клиентом:</h5>
-                    <ol class="list-decimal pl-5">
-                        <li class="mb-1"><strong>Выслушайте</strong> клиента полностью, не перебивая</li>
-                        <li class="mb-1"><strong>Выразите понимание</strong> его чувств и признайте право на эмоции</li>
-                        <li class="mb-1"><strong>Принесите извинения</strong>, если компания действительно допустила ошибку</li>
-                        <li class="mb-1"><strong>Объясните</strong> причины возникновения проблемы (если известны)</li>
-                        <li class="mb-1"><strong>Предложите решение</strong> и четкие шаги по исправлению ситуации</li>
-                        <li class="mb-1"><strong>Возьмите ответственность</strong> за решение проблемы</li>
-                        <li class="mb-1"><strong>Действуйте немедленно</strong>, демонстрируя серьезность отношения</li>
-                        <li class="mb-1"><strong>Сообщайте о прогрессе</strong> в решении проблемы</li>
-                        <li><strong>Проведите контрольный звонок</strong> после решения для подтверждения удовлетворенности</li>
+                <h4>Шаблон обновления статуса заявки:</h4>
+                <div class="step">
+                    <p class="text-gray-700 italic">
+                        <strong>Статус:</strong> [В работе/Ожидание ответа/Решена/Закрыта]<br>
+                        <strong>Выполненные действия:</strong><br>
+                        1. [Действие 1]<br>
+                        2. [Действие 2]<br>
+                        <strong>Результат:</strong> [Описание результата]<br>
+                        <strong>Следующие шаги:</strong> [Дальнейшие действия, если необходимы]<br>
+                        <strong>Комментарий для клиента:</strong> [Текст, который будет отправлен клиенту]
+                    </p>
+                </div>
+                
+                <h4>Шаблон закрытия заявки:</h4>
+                <div class="step">
+                    <p class="text-gray-700 italic">
+                        <strong>Статус:</strong> Закрыта<br>
+                        <strong>Решение:</strong> [Описание окончательного решения]<br>
+                        <strong>Время решения:</strong> [Фактическое время решения]<br>
+                        <strong>Рекомендации клиенту:</strong> [Дополнительные рекомендации для предотвращения подобных проблем]<br>
+                        <strong>Комментарий для клиента:</strong> "Уважаемый [Имя клиента], проблема успешно решена. [Краткое описание решения]. Если у вас возникнут дополнительные вопросы, пожалуйста, обращайтесь в нашу службу поддержки."<br>
+                        <strong>Внутренний комментарий:</strong> [Комментарий для коллег, если необходим]
+                    </p>
+                </div>
+                
+                <h4>Рекомендации по стилю общения:</h4>
+                <table class="my-4">
+                    <thead>
+                        <tr>
+                            <th>Используйте ✅</th>
+                            <th>Избегайте ❌</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Позитивные формулировки ("Мы можем..." вместо "Мы не можем...")</td>
+                            <td>Отрицательных формулировок</td>
+                        </tr>
+                        <tr>
+                            <td>Конкретные и точные формулировки</td>
+                            <td>Обвиняющих высказываний ("Вы неправильно сделали...")</td>
+                        </tr>
+                        <tr>
+                            <td>Деловой, но дружелюбный стиль</td>
+                            <td>Обещаний, которые нельзя выполнить</td>
+                        </tr>
+                        <tr>
+                            <td>Эмпатические фразы ("Я понимаю вашу обеспокоенность...")</td>
+                            <td>Фраз "Это не наша проблема" или "Мы этим не занимаемся"</td>
+                        </tr>
+                        <tr>
+                            <td>Вопросы для уточнения деталей</td>
+                            <td>Сленга и неформальных выражений</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section id="section7">
+            <h2>7. Ответы на типовые вопросы и диагностика</h2>
+            
+            <div id="section7-1">
+                <h3>7.1 Подход к диагностике</h3>
+                <p>Быстрая и точная диагностика проблем клиентов — ключевой навык специалиста технической поддержки.</p>
+                
+                <img src="https://www.unicraft.org/wp-content/uploads/2023/12/%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81-13-1024x717.png" alt="Типовые вопросы клиентов" class="my-4 max-w-full">
+                
+                <h4>Методология диагностики:</h4>
+                <ol class="list-decimal ml-6 my-4">
+                    <li class="mb-2">
+                        <strong>Внимательное выслушивание/прочтение проблемы</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Дайте клиенту полностью описать проблему</li>
+                            <li>Обращайте внимание на технические детали и условия возникновения</li>
+                            <li>Фиксируйте ключевые моменты</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Уточняющие вопросы</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Задавайте конкретные вопросы по симптомам</li>
+                            <li>Уточняйте последовательность действий клиента</li>
+                            <li>Запрашивайте технические детали (версии ПО, модели устройств и т.д.)</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Выявление симптомов</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Определите основные и второстепенные симптомы</li>
+                            <li>Отделите причины от следствий</li>
+                            <li>Группируйте похожие признаки</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Сопоставление с известными сценариями</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Сравните с базой типовых проблем</li>
+                            <li>Вспомните аналогичные случаи из практики</li>
+                            <li>Проверьте наличие актуальных сообщений об ошибках</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Тестирование решения</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Предложите решение и инструкции по его применению</li>
+                            <li>Попросите клиента выполнить действия и сообщить о результате</li>
+                            <li>Будьте готовы предложить альтернативное решение</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div id="section7-2">
+                <h3>7.2 Каталог типовых вопросов и решений</h3>
+                
+                <h4>Категория: Проблемы с авторизацией</h4>
+                
+                <div class="step">
+                    <p><strong>"Не могу войти в систему мониторинга. Пишет 'Неверный логин или пароль'"</strong></p>
+                    
+                    <p><strong>Возможные причины:</strong></p>
+                    <ul class="list-disc ml-6 my-2">
+                        <li>Ошибка при вводе учетных данных</li>
+                        <li>Капслок включен</li>
+                        <li>Неактивная учетная запись</li>
+                        <li>Пароль был изменен</li>
+                        <li>Блокировка после нескольких неудачных попыток</li>
+                    </ul>
+                    
+                    <p><strong>Диагностика:</strong></p>
+                    <ol class="list-decimal ml-6 my-2">
+                        <li>Уточните у клиента, правильно ли он вводит логин и пароль</li>
+                        <li>Спросите, включен ли Caps Lock</li>
+                        <li>Проверьте в админ-панели, не заблокирована ли учетная запись</li>
+                        <li>Уточните, пытается ли клиент войти через правильный URL (не на тестовую среду)</li>
                     </ol>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol class="list-decimal ml-6 my-2">
+                        <li>Попросите клиента проверить правильность ввода данных и отключить Caps Lock</li>
+                        <li>Если проблема не решена, предложите сбросить пароль</li>
+                        <li>Если учетная запись заблокирована, разблокируйте ее</li>
+                        <li>Пришлите клиенту правильную ссылку для входа</li>
+                        <li>В крайнем случае, создайте новую учетную запись</li>
+                    </ol>
+                    
+                    <p><strong>Шаблон ответа:</strong> "Понимаю вашу проблему с авторизацией. Давайте проверим несколько моментов: 1) Убедитесь, что Caps Lock выключен; 2) Проверьте правильность ввода логина и пароля без лишних пробелов; 3) Используйте корректный URL для входа: [ссылка]. Если проблема сохраняется, я могу отправить вам ссылку для сброса пароля на электронную почту, привязанную к учетной записи."</p>
                 </div>
-            </div>
-
-            <div class="important-box p-4 rounded mb-6">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Что недопустимо в работе с клиентом</h3>
-                <ul class="pl-5">
-                    <li class="checklist-item">Обещать невыполнимое или преувеличивать возможности</li>
-                    <li class="checklist-item">Перекладывать ответственность на клиента или коллег</li>
-                    <li class="checklist-item">Игнорировать или обесценивать проблемы клиента</li>
-                    <li class="checklist-item">Отвечать на агрессию агрессией или сарказмом</li>
-                    <li class="checklist-item">Оставлять клиента без информации о статусе решения проблемы</li>
-                    <li class="checklist-item">Использовать технический жаргон в общении с неопытным пользователем</li>
-                    <li class="checklist-item">Принимать решения за клиента без его согласия</li>
-                </ul>
-            </div>
-
-            <div class="success-box p-4 rounded">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-check-circle mr-2"></i>Ключевые показатели доверия клиентов</h3>
-                <p class="mb-4">Как понять, что вы успешно повышаете доверие клиентов к компании:</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-white p-3 rounded shadow">
-                        <h4 class="font-bold mb-2 text-green-700">Обратная связь</h4>
-                        <ul class="pl-5">
-                            <li class="checklist-item">Положительные отзывы</li>
-                            <li class="checklist-item">Благодарности</li>
-                            <li class="checklist-item">Высокие оценки в опросах</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-3 rounded shadow">
-                        <h4 class="font-bold mb-2 text-green-700">Поведение</h4>
-                        <ul class="pl-5">
-                            <li class="checklist-item">Повторные обращения</li>
-                            <li class="checklist-item">Рекомендации коллегам</li>
-                            <li class="checklist-item">Расширение сотрудничества</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-3 rounded shadow">
-                        <h4 class="font-bold mb-2 text-green-700">Коммуникация</h4>
-                        <ul class="pl-5">
-                            <li class="checklist-item">Открытый диалог</li>
-                            <li class="checklist-item">Конструктивная критика</li>
-                            <li class="checklist-item">Прямые обращения к вам</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Заключение -->
-        <section class="bg-white rounded-lg p-6 mb-8 shadow-md">
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">Заключение</h2>
-            <p class="mb-4">
-                Поздравляем! Вы ознакомились с основными принципами и инструментами эффективной технической поддержки клиентов. Помните, что успешный специалист техподдержки:
-            </p>
-            <ul class="pl-5 mb-6">
-                <li class="checklist-item">Обладает техническими знаниями и коммуникативными навыками</li>
-                <li class="checklist-item">Умеет четко и понятно объяснять сложные технические концепции</li>
-                <li class="checklist-item">Эффективно использует инструменты удаленного подключения</li>
-                <li class="checklist-item">Обучает клиентов работе с системами мониторинга</li>
-                <li class="checklist-item">Ведет грамотную письменную коммуникацию</li>
-                <li class="checklist-item">Быстро диагностирует и решает типовые проблемы</li>
-                <li class="checklist-item">Укрепляет доверие клиентов к компании</li>
-            </ul>
-            
-            <div class="tip-box p-4 rounded mb-6">
-                <h3 class="font-bold text-xl mb-2"><i class="fas fa-lightbulb mr-2"></i>Помните!</h3>
-                <p>Каждый контакт с клиентом — это возможность продемонстрировать профессионализм нашей компании и укрепить долгосрочные отношения. Ваша работа напрямую влияет на репутацию и успех всей организации.</p>
-            </div>
-            
-            <div class="bg-blue-50 p-4 rounded">
-                <h3 class="font-bold text-xl mb-4 text-blue-800">Проверьте свои знания</h3>
-                <p class="mb-3">
-                    Чтобы убедиться в готовности к работе, пройдите тест по изученному материалу:
-                </p>
-                <div class="bg-white p-4 rounded shadow">
-                    <p class="font-bold">Тест на знание принципов технической поддержки:</p>
-                    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdaR-K-4sE8oW2_oQn02sBBuOQXwqOO4jRfa6tp9_LzIK4mDA/viewform?usp=header" class="text-blue-600 underline" target="_blank">https://docs.google.com/forms/d/e/1FAIpQLSdaR-K-4sE8oW2_oQn02sBBuOQXwqOO4jRfa6tp9_LzIK4mDA/viewform</a></p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Подвал -->
-    <footer class="header-bg text-white py-6">
-        <div class="container mx-auto text-center">
-            <p>© 2023 Руководство по технической поддержке клиентов</p>
-            <p class="mt-2">При возникновении вопросов обращайтесь в отдел обучения</p>
-        </div>
-    </footer>
-
-    <!-- Скрипты -->
-    <script>
-        // Интерактивные элементы
-        document.addEventListener('DOMContentLoaded', function() {
-            // Подсветка активного раздела при скролле
-            const sections = document.querySelectorAll('section[id]');
-            
-            function highlightCurrentSection() {
-                const scrollPosition = window.scrollY;
                 
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 100;
-                    const sectionHeight = section.offsetHeight;
-                    const sectionId = section.getAttribute('id');
+                <div class="step">
+                    <p><strong>"Забыл/потерял пароль от учетной записи"</strong></p>
                     
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        const navLink = document.querySelector(`a[href="#${sectionId}"]`);
-                        if (navLink) {
-                            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-                            navLink.classList.add('active');
-                        }
-                    }
-                });
-            }
-            
-            // Плавная прокрутка к разделам
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
+                    <p><strong>Диагностика:</strong></p>
+                    <ol class="list-decimal ml-6 my-2">
+                        <li>Проверьте наличие учетной записи клиента в системе</li>
+                        <li>Убедитесь, что обращение поступило от авторизованного лица</li>
+                        <li>Проверьте, привязана ли к аккаунту электронная почта</li>
+                    </ol>
                     
-                    const targetId = this.getAttribute('href');
-                    if (targetId !== '#') {
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 50,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
+                    <p><strong>Решение:</strong></p>
+                    <ol class="list-decimal ml-6 my-2">
+                        <li>Предложите клиенту воспользоваться функцией "Забыли пароль" на странице входа</li>
+                        <li>Если функция недоступна, выполните сброс пароля вручную</li>
+                        <li>Отправьте новые учетные данные на корпоративную почту клиента</li>
+                        <li>Порекомендуйте сменить временный пароль при первом входе</li>
+                    </ol>
+                    
+                    <p><strong>Шаблон ответа:</strong> "Я понимаю ситуацию с утерей пароля. Для восстановления доступа я отправил ссылку для сброса пароля на вашу корпоративную почту [email]. Пожалуйста, проверьте входящие сообщения и следуйте инструкциям в письме. После входа в систему рекомендую сразу изменить временный пароль на постоянный. Если у вас возникнут сложности, пожалуйста, сообщите мне."</p>
+                </div>
+                
+                <h4>Категория: Проблемы с системой мониторинга</h4>
+                
+                <div class="step">
+                    <p><strong>"Не отображается текущее местоположение транспортного средства"</strong></p>
+                    
+                    <p><strong>Возможные причины:</strong></p>
+                    <ul class="list-disc ml-6 my-2">
+                        <li>Проблемы с оборудованием GPS/ГЛОНАСС</li>
+                        <li>Отсутствие сигнала связи (GSM, GPRS)</li>
+                        <li>Неправильные настройки в системе мониторинга</li>
+                        <li>Транспортное средство находится в зоне отсутствия связи</li>
+                        <li>Разряд аккумулятора трекера</li>
+                    </ul>
+                    
+                    <p><strong>Диагностика:</strong></p>
+                    <ol class="list-decimal ml-6 my-2">
+                        <li>Проверьте время последнего сеанса связи с трекером</li>
+                        <li>Уточните у клиента, как давно возникла проблема</li>
+                        <li>Проверьте настройки объекта в системе мониторинга</li>
+                        <li>Выясните, находится ли ТС в зоне со слабым покрытием связи</li>
+                    </ol>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol class="list-decimal ml-6 my-2">
+                        <li>Если трекер давно не выходил на связь — рекомендуйте проверить физическое состояние устройства</li>
+                        <li>Проверьте и скорректируйте настройки объекта в системе</li>
+                        <li>Предложите перезагрузить трекер (если это возможно удалённо или клиент имеет физический доступ)</li>
+                        <li>Если проблема в настройках, выполните их коррекцию через удаленное подключение</li>
+                    </ol>
+                    
+                    <p><strong>Шаблон ответа:</strong> "Судя по данным, последняя связь с GPS-трекером вашего автомобиля была [время/дата]. Возможные причины отсутствия данных о местоположении: 1) Транспортное средство находится вне зоны действия GSM-сети; 2) Проблемы с питанием трекера; 3) Неисправность GPS-модуля. Рекомендую проверить физическое состояние устройства и уровень заряда аккумулятора. Также я удаленно проверил настройки системы — с нашей стороны все корректно настроено. Сообщите, пожалуйста, когда транспортное средство вернется в зону покрытия сети, и мы сможем выполнить удаленную диагностику трекера."</p>
+                </div>
+                
+                <div class="step">
+                    <p><strong>"Не могу сформировать отчет по расходу топлива"</strong></p>
+                    
+                    <p><strong>Возможные причины:</strong></p>
+                    <ul class="list-disc ml-6 my-2">
+                        <li>Отсутствуют данные от датчика уровня топлива</li>
+                        <li>Неправильные настройки расчета расхода</li>
+                        <li>Не настроен расчетный бак для ТС</li>
+                        <li>Выбран неверный период для формирования отчета</li>
+                        <li>Недостаточно прав для создания отчетов</li>
+                    </ul>
+                    
+                    <p><strong>Диагностика:</strong></p>
+                    <ol class="list-decimal ml-6 my-2">
+                        <li>Уточните у клиента конкретную ошибку при формировании отчета</li>
+                        <li>Проверьте наличие данных от датчиков за выбранный период</li>
+                        <li>Проверьте настройки расчета топлива для данного транспортного средства</li>
+                        <li>Убедитесь, что у клиента достаточно прав для работы с отчетами</li>
+                    </ol>
+                    
+                    <p><strong>Решение:</strong></p>
+                    <ol class="list-decimal ml-6 my-2">
+                        <li>Настройте параметры расчета топлива (если не настроены)</li>
+                        <li>Проверьте и откалибруйте датчик уровня топлива</li>
+                        <li>Объясните клиенту корректный процесс формирования отчета</li>
+                        <li>При необходимости предоставьте расширенные права доступа</li>
+                    </ol>
+                    
+                    <p><strong>Шаблон ответа:</strong> "По вашему вопросу о формировании отчета по расходу топлива: я проверил настройки вашей системы и обнаружил, что для автомобиля [марка/гос.номер] не настроен расчетный топливный бак. Это необходимый параметр для формирования корректных отчетов. Предлагаю провести удаленное подключение, чтобы я мог настроить все необходимые параметры и показать процесс формирования отчета. Также я подготовил для вас краткую инструкцию по формированию отчетов по расходу топлива, которую отправлю на вашу почту."</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="section8">
+            <h2>8. Поднятие уровня доверия клиента</h2>
             
-            window.addEventListener('scroll', highlightCurrentSection);
-        });
-    </script>
+            <div id="section8-1">
+                <h3>8.1 Стратегии укрепления доверия</h3>
+                <p>Доверие клиента к специалисту техподдержки и компании в целом — ключевой фактор долгосрочного сотрудничества.</p>
+                
+                <h4>Ключевые стратегии укрепления доверия:</h4>
+                <ol class="list-decimal ml-6 my-4">
+                    <li class="mb-2">
+                        <strong>Профессионализм и компетентность</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Демонстрируйте глубокое знание продукта и процессов</li>
+                            <li>Давайте четкие, уверенные ответы на вопросы</li>
+                            <li>При необходимости говорите "Я уточню это" вместо неуверенных предположений</li>
+                            <li>Постоянно развивайте свои технические и коммуникационные навыки</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Прозрачность и честность</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Не скрывайте реальное положение дел, даже если это неприятная информация</li>
+                            <li>Объясняйте причины проблем и сроки их решения</li>
+                            <li>Признавайте ошибки, если они произошли</li>
+                            <li>Предоставляйте клиенту полную информацию о состоянии его запроса</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Оперативность и надежность</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Быстро реагируйте на обращения клиентов</li>
+                            <li>Выполняйте обещания в заявленные сроки</li>
+                            <li>Информируйте клиента о задержках, если они неизбежны</li>
+                            <li>Следите за прогрессом решения проблемы и держите клиента в курсе</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Индивидуальный подход</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Запоминайте особенности и предпочтения клиента</li>
+                            <li>Используйте информацию из предыдущих обращений</li>
+                            <li>Адаптируйте решения под конкретные потребности клиента</li>
+                            <li>Демонстрируйте понимание специфики бизнеса клиента</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Проактивность и забота</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Предупреждайте о возможных проблемах заранее</li>
+                            <li>Предлагайте оптимизации и улучшения</li>
+                            <li>Следите за удовлетворенностью клиента</li>
+                            <li>Выполняйте периодические проверки работоспособности систем</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <div class="info-block success">
+                    <p><strong>Практические действия для повышения доверия:</strong></p>
+                    <ul class="list-disc ml-6 my-2">
+                        <li>Отправляйте клиенту краткое резюме после каждого разговора или сеанса поддержки</li>
+                        <li>Звоните или пишите после решения проблемы, чтобы убедиться, что все работает</li>
+                        <li>Создавайте для клиентов персонализированные инструкции и обучающие материалы</li>
+                        <li>Отмечайте положительные моменты в работе клиента с системой</li>
+                        <li>Предлагайте регулярные обзоры и оптимизацию настроек систем</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="section8-2">
+                <h3>8.2 Решение конфликтных ситуаций</h3>
+                <p>Даже самая качественная поддержка иногда сталкивается с недовольством или конфликтными ситуациями. Правильное управление такими ситуациями может не только сохранить, но и укрепить доверие клиента.</p>
+                
+                <h4>Алгоритм работы с недовольным клиентом:</h4>
+                <ol class="list-decimal ml-6 my-4">
+                    <li class="mb-2">
+                        <strong>Внимательно выслушать</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Дайте клиенту высказаться полностью, не перебивайте</li>
+                            <li>Проявите эмпатию и понимание эмоций клиента</li>
+                            <li>Задавайте уточняющие вопросы для полного понимания ситуации</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Признать проблему</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Согласитесь с наличием проблемы (если она действительно есть)</li>
+                            <li>Извинитесь за доставленные неудобства</li>
+                            <li>Поблагодарите клиента за обратную связь</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Предложить решение</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Сформулируйте конкретный план действий</li>
+                            <li>Установите четкие сроки решения проблемы</li>
+                            <li>При возможности предложите компенсацию или бонус</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Реализовать решение</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Действуйте оперативно и решительно</li>
+                            <li>Информируйте клиента о ходе работ</li>
+                            <li>Привлекайте дополнительные ресурсы, если необходимо</li>
+                        </ul>
+                    </li>
+                    <li class="mb-2">
+                        <strong>Проверить удовлетворенность</strong>
+                        <ul class="list-disc ml-6 mt-2">
+                            <li>Свяжитесь с клиентом после решения проблемы</li>
+                            <li>Убедитесь, что клиент доволен результатом</li>
+                            <li>Уточните, есть ли другие вопросы или проблемы</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h4>Фразы для деэскалации конфликта:</h4>
+                <table class="my-4">
+                    <thead>
+                        <tr>
+                            <th>Ситуация</th>
+                            <th>Полезные фразы</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Клиент возмущен долгим ожиданием</td>
+                            <td>"Я понимаю ваше разочарование из-за длительного ожидания. Это действительно неприятно, когда приходится ждать. Давайте сейчас сосредоточимся на решении вашей проблемы, чтобы больше не терять время."</td>
+                        </tr>
+                        <tr>
+                            <td>Клиент недоволен качеством услуги</td>
+                            <td>"Я искренне сожалею, что наш сервис не соответствовал вашим ожиданиям. Ваш опыт очень важен для нас. Я лично проконтролирую, чтобы ваша проблема была решена наилучшим образом."</td>
+                        </tr>
+                        <tr>
+                            <td>Клиент обвиняет в некомпетентности</td>
+                            <td>"Я понимаю ваше разочарование. Давайте вместе найдем решение, которое вас устроит. Я привлеку всех необходимых специалистов, чтобы мы могли предоставить вам наилучший сервис."</td>
+                        </tr>
+                        <tr>
+                            <td>Клиент угрожает разорвать сотрудничество</td>
+                            <td>"Мы очень ценим наше сотрудничество с вами. Я понимаю, что возникшая ситуация вызывает сомнения. Позвольте мне показать, как мы можем исправить ситуацию и сделать наше дальнейшее сотрудничество еще более продуктивным."</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="info-block warning">
+                    <p><strong>Чего следует избегать в конфликтных ситуациях:</strong></p>
+                    <ul class="list-disc ml-6 my-2">
+                        <li>Не спорьте с клиентом и не пытайтесь доказать свою правоту</li>
+                        <li>Не перекладывайте ответственность на других сотрудников или отделы</li>
+                        <li>Не обещайте невыполнимое только чтобы успокоить клиента</li>
+                        <li>Не воспринимайте критику лично</li>
+                        <li>Не позволяйте эмоциям клиента влиять на ваше профессиональное поведение</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="text-center my-8 text-gray-600">
+            <p>© 2025 Руководство для нового сотрудника технической поддержки</p>
+        </footer>
+    </div>
 </body>
 </html>
